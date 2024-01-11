@@ -1,0 +1,20 @@
+{
+  "name": "gui.for.cores-docs",
+  "version": "1.0.0",
+  "description": "GUI.for.Cores-Docs",
+  "scripts": {
+    "dev": "vitepress dev --host",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "keywords": [
+    "GUI.for.Cores",
+    "GUI.for.Clash",
+    "GUI.for.SingBox"
+  ],
+  "author": "https://github.com/GUI-for-Cores",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "1.0.0-rc.35"
+  }
+}
