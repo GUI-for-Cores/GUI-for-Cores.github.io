@@ -21,6 +21,7 @@ export default defineConfig({
           { text: "安装", link: "/gfc/01-install.md" },
           { text: "卸载", link: "/gfc/02-uninstall.md" },
           { text: "运行原理", link: "/gfc/03-how-it-works.md" },
+          { text: "插件系统", link: "/gfc/plugins.md" },
         ],
       },
       {
