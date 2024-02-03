@@ -1,6 +1,8 @@
 # 插件系统
 
-插件系统作为 GUI 的灵魂，有着非常的强大的功能，请朋友们不要安装来源不明、加密、复杂的插件，它可能会损坏你的电脑。
+插件系统有着非常的强大的功能，请不要安装来源不明、加密、代码复杂难以审计插件，它可能会损坏你的电脑。
+
+![](/gfc/resources/101_plugins.png)
 
 ## 插件系统能够做什么？
 
@@ -8,7 +10,7 @@
 
 - 对生成的配置进行修改、对订阅的结果进行修改。
 
-- 扩展 GUI 的能力。
+- 集成第三次程序，扩展 GUI 的能力。
 
 - GUI 中的一切操作均可通过插件进行。
 
@@ -28,26 +30,39 @@
 
 特别的，当插件开启了`需要安装`参数时，界面会多出`安装`和`卸载`按钮，点击后 GUI 会执行源码中的`onInstall` 和 `onUninstall` 方法。可用来做插件的初始化工作与善后工作，当`onInstall`方法执行没有出错，GUI 会认为插件执行安装成功，将插件标记为已安装，当`onUninstall`方法执行没有出错，GUI 会认为插件执行卸载成功，将插件标记为已卸载（即未安装）。
 
+当插件配置了`菜单`时，右键插件卡片会出现对应的菜单项，点击后会执行相应的方法。
+
+## 插件编写规范
+
+1、代码应格式化、易于阅读、不能加密；
+
+2、在程序 data 目录下进行 IO 操作，不访问用户私有目录；
+
+3、临时文件应存放在 data/.cache 目录，用完需要删除对应的文件；
+
+4、第三方程序应放置到 data/third 目录，卸载时需要删除对应目录；
+
+5、禁止动态创建 script、style 等标签，引入外部 js、css 等操作；
+
+6、对系统有侵入性的修改，需要在卸载时进行恢复操作。
+
 ## 插件编写示例
 
 1、手动触发插件示例
 
-```javascript
-const onInstall = async () => {
-  Plugins.message.info("你点击了安装，插件将会被标记为已安装。");
-};
-const onUninstall = async () => {
-  Plugins.message.info("你点击了卸载，插件将会被标记为未安装。");
-};
-const onRun = async () => {
-  try {
-    const { body } = await Plugins.HttpGet("http://baidu.com");
-    Plugins.message.info("你成功访问了一次百度");
-  } catch (err) {
-    Plugins.message.info("看来你访问百度出现了问题");
-  }
-};
-```
+首先创建一个插件：
+
+![](/gfc/resources/102_plugin_example.png)
+
+然后编写对应的代码：
+
+![](/gfc/resources/103_plugin_example.png)
+
+最后可以尝试安装、运行、卸载插件
+
+![](/gfc/resources/104_plugin_example.png)
+
+下面的插件示例需要同样的操作，先创建插件、再编写插件代码、最后运行。
 
 2、更新订阅时插件代码示例
 
@@ -94,7 +109,7 @@ const onStartup = () => {
 
 ```javaScript
 const onShutdown = () => {
-    alert('APP启动了')
+    alert('APP关闭了')
 }
 ```
 
@@ -161,4 +176,10 @@ pluginsStore.reloadPlugin(plugin: PluginType, code = '')
 pluginsStore.updatePluginTrigger(plugin: PluginType)
 ```
 
-最后欢迎各位为 GUI 编写插件，插件中心已经在筹备中了，欢迎关注[Plugin-Hub](https://github.com/GUI-for-Cores/Plugin-Hub)。
+## 插件中心
+
+插件中心是为了方便用户下载常用的插件而设立的仓库，[Plugin-Hub](https://github.com/GUI-for-Cores/Plugin-Hub)。
+
+![](/gfc/resources/105_plugin_hub.png)
+
+欢迎各位为 GUI 编写插件，并提交你的插件到插件中心。

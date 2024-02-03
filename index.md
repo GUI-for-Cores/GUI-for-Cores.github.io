@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "GUI-for-Cores"
-  text: "GUI for Cores Project"
+  name: "GUI for Cores"
+  text: "为核心开发的GUI程序，支持mihomo、sing-box内核"
   tagline: 简洁易用、功能强大、运行速度飞快的GUI应用！
   actions:
     - theme: brand
