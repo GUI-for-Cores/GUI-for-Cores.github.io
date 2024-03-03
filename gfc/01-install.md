@@ -25,19 +25,20 @@
 
 ```
 GUI.for.Clash
-└─ data                 // 程序资源目录
-|   ├─ .cache           // 缓存文件夹，临时文件应该放在此目录
-|   ├─ mihomo           // 内核程序目录
-|   ├─ plugins          // 插件目录，仅存放插件源码，一个插件对应一个plugin-xxx.js文件
-|   ├─ rulesets         // 规则集目录，供内核程序引用
-|   ├─ subscribes       // 订阅目录，供内核程序引用
-|   ├─ third            // 第三方程序目录，插件下载的第三方程序应该放在本目录运行
-|   ├─ plugins.yaml     // 插件索引文件
-|   ├─ profiles.yaml    // 配置索引文件
-|   ├─ rulesets.yaml    // 规则集索引文件
-|   ├─ subscribes.yaml  // 订阅索引文件
-|   └─ user.yaml        // 程序配置文件
-└─ GUI.for.Clash.exe    // 主程序
+└─ data                      // 程序资源目录
+|   ├─ .cache                // 缓存文件夹，临时文件应该放在此目录
+|   ├─ mihomo                // 内核程序目录
+|   ├─ plugins               // 插件目录，仅存放插件源码，一个插件对应一个plugin-xxx.js文件
+|   ├─ rulesets              // 规则集目录，供内核程序引用
+|   ├─ subscribes            // 订阅目录，供内核程序引用
+|   ├─ third                 // 第三方程序目录，插件下载的第三方程序应该放在本目录运行
+|   ├─ plugins.yaml          // 插件索引文件
+|   ├─ profiles.yaml         // 配置索引文件
+|   ├─ rulesets.yaml         // 规则集索引文件
+|   ├─ scheduledtasks.yaml   // 计划任务索引文件
+|   ├─ subscribes.yaml       // 订阅索引文件
+|   └─ user.yaml             // 程序配置文件：APP设置、插件设置
+└─ GUI.for.Clash.exe         // 主程序
 ```
 
 ## 疑问与解答

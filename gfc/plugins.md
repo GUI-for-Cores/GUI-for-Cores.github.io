@@ -32,6 +32,8 @@
 
 当插件配置了`菜单`时，右键插件卡片会出现对应的菜单项，点击后会执行相应的方法。
 
+当插件配置了`配置`时，右键插件【配置插件】，可对插件进行配置。
+
 ## 插件编写规范
 
 1、代码应格式化、易于阅读、不能加密；
@@ -67,13 +69,10 @@
 2、更新订阅时插件代码示例
 
 ```javascript
-// proxies可能是base64字符串，也可能是一个数组
-// 请返回一个数组[]
-const onSubscribe = (proxies) => {
-  if (Plugins.isValidBase64(proxies)) {
-    // 你可以在这里解析节点，或调用第三方程序解析节点
-    return [];
-  }
+// params: proxies是一个代理数组
+// params: metadata是订阅元数据
+// return: 请返回一个代理数组[]
+const onSubscribe = (proxies, metadata) => {
   // 示例：把节点名称中的新加坡替换为空
   proxies = proxies.map((v) => {
     return {
@@ -88,7 +87,14 @@ const onSubscribe = (proxies) => {
 3、生成配置时插件代码示例
 
 ```javascript
-const onGenerate = (config) => {
+// params: config是已生成的标准的内核配置，即config.yaml文件的内容
+// params: metadata是生成内核配置的源数据，即GUI所使用的profile数据
+// return: 请返回标准的内核配置
+const onGenerate = (config, metadata) => {
+  if (metadata.name == "某个profile") {
+    // 仅当某个profile时，才处理
+    // 一些处理...
+  }
   // 移除tun配置
   delete config.tun;
   // 关闭DNS服务器
@@ -174,6 +180,12 @@ pluginsStore.deletePlugin(id: string)
 pluginsStore.updatePlugin(id: string)
 pluginsStore.reloadPlugin(plugin: PluginType, code = '')
 pluginsStore.updatePluginTrigger(plugin: PluginType)
+
+// 计划任务管理示例
+const scheduledTasksStore = Plugins.useScheduledTasksStore()
+scheduledTasksStore.deleteScheduledTask(id: string)
+scheduledTasksStore.editScheduledTask(id: string, s: ScheduledTaskType)
+scheduledTasksStore.addScheduledTask(s: ScheduledTaskType)
 ```
 
 ## 插件中心
