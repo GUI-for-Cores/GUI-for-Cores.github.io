@@ -2,11 +2,18 @@
 
 ## 1、下载程序
 
-点击[下载地址](https://github.com/GUI-for-Cores/GUI.for.Clash/releases)，在 Releases 里找到最新的版本，Assets 里提供了 Windows 32 位、64 位以及 arm 架构 64 位处理器的版本，按照自己电脑的架构来下载。
+点击[下载地址](https://github.com/GUI-for-Cores/GUI.for.Clash/releases)，在 Releases 里找到最新的版本，Assets 里提供了以下平台：
 
-## 2、移动程序
+- Windows-amd64
+- Windows-arm64
+- Windows-386
+- macOS-amd64
+- macOS-arm64
+- Ubuntu-amd64
 
-将下载的程序重命名为`GUI.for.Clash.exe`，然后移动到任何你想放置的目录；
+## 2、Windows
+
+解压下载的文件，然后移动到任何你想放置的目录；
 
 例如：`D:\MyPrograms\GUI.for.Cores\GUI.for.Clash`；
 
@@ -17,11 +24,41 @@
 - 避免路径中出现`空格`
 - 避免路径中出现`中文`
 
-## 3、运行程序
+## 3、macOS
 
-双击运行程序，待程序启动完成，你可以右键任务栏的程序图标，将程序固定到任务栏，方便下次打开。你也可以自行创建桌面快捷方式。
+双击解压文件，将解压后的`GUI.for.Clash`拖到桌面，按下列步骤进行：
 
-## 4、目录详解
+1、双击运行，提示【无法打开...因为无法验证开发者】，点击取消；
+
+2、系统设置 - 隐私与安全性 - 安全性，【已阻止使用...因为来自身份不明的开发者】，点击【仍要打开】，输入密码并二次确认。
+
+注意事项：
+
+- 解压后的程序必须`移动`一次（例如上面，从下载文件夹移动到了桌面），否则运行后没有【写入权限】
+
+## 4、Linux
+
+> 只测试了 Ubuntu 22.04.4，如果你是其他发行版，也可以下载该目标文件，尝试运行。
+
+解压文件，移动至合适的目录，例如：`/opt/GUI.for.Clash`
+
+手动创建桌面图标：新建`GUI.for.Clash.desktop`文件，填入下面内容，然后移动至`/usr/share/applications`目录。
+
+```
+[Desktop Entry]
+Version=1.0
+Name=GUI.for.Clash
+Comment=GUI.for.Clash
+Exec=/path/to/GUI.for.Clash/GUI.for.Clash
+Icon=/path/to/GUI.for.Clash/appicon.png
+Terminal=false
+Type=Application
+Categories=Application;GUI.for.Clash;
+StartupNotify=true
+
+```
+
+## 5、目录详解
 
 ```
 GUI.for.Clash
