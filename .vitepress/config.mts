@@ -15,15 +15,20 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: "通用文档",
+        items: [
+          { text: "安装", link: "/guide/01-install.md" },
+          { text: "卸载", link: "/guide/02-uninstall.md" },
+          { text: "运行原理", link: "/guide/03-how-it-works.md" },
+          { text: "插件系统", link: "/guide/04-plugins.md" },
+          { text: "计划任务系统", link: "/guide/05-tasks.md" },
+        ],
+      },
+      {
         text: "GUI.for.Clash",
         items: [
           { text: "简介", link: "/gfc/index.md" },
-          { text: "安装", link: "/gfc/01-install.md" },
-          { text: "卸载", link: "/gfc/02-uninstall.md" },
-          { text: "运行原理", link: "/gfc/03-how-it-works.md" },
-          { text: "插件系统", link: "/gfc/plugins.md" },
-          { text: "计划任务系统", link: "/gfc/tasks.md" },
-          { text: "使用教程", link: "/gfc/04-how-to-use.md" },
+          { text: "使用教程", link: "/gfc/how-to-use.md" },
         ],
       },
       {

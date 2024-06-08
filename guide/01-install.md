@@ -2,7 +2,11 @@
 
 ## 1、下载程序
 
-点击[下载地址](https://github.com/GUI-for-Cores/GUI.for.Clash/releases)，在 Releases 里找到最新的版本，Assets 里提供了以下平台：
+> GUI.for.Clash 最新版：[下载地址](https://github.com/GUI-for-Cores/GUI.for.Clash/releases/latest)
+
+> GUI.for.SingBox 最新版：[下载地址](https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/latest)
+
+在项目的 Releases 里找到最新的版本，Assets 里提供了以下平台：
 
 - Windows-amd64
 - Windows-arm64
@@ -11,11 +15,13 @@
 - macOS-arm64
 - Ubuntu-amd64
 
+确认自己设备的平台，然后下载对应的压缩包文件。
+
 ## 2、Windows
 
 解压下载的文件，然后移动到任何你想放置的目录；
 
-例如：`D:\MyPrograms\GUI.for.Cores\GUI.for.Clash`；
+以 GUI.for.Clash 为例：`D:\MyPrograms\GUI.for.Cores\GUI.for.Clash`；
 
 此时的程序路径：`D:\MyPrograms\GUI.for.Cores\GUI.for.Clash\GUI.for.Clash.exe`。
 
@@ -26,7 +32,7 @@
 
 ## 3、macOS
 
-双击解压文件，将解压后的`GUI.for.Clash`拖到桌面，按下列步骤进行：
+双击解压文件，将`解压后`的文件`拖到桌面`，按下列步骤进行：
 
 1、双击运行，提示【无法打开...因为无法验证开发者】，点击取消；
 
@@ -40,7 +46,7 @@
 
 > 只测试了 Ubuntu 22.04.4，如果你是其他发行版，也可以下载该目标文件，尝试运行。
 
-解压文件，移动至合适的目录，例如：`/opt/GUI.for.Clash`
+解压文件，移动至合适的目录，以 GUI.for.Clash 为例：`/opt/GUI.for.Clash`
 
 手动创建桌面图标：新建`GUI.for.Clash.desktop`文件，填入下面内容，然后移动至`/usr/share/applications`目录。
 
@@ -60,6 +66,8 @@ StartupNotify=true
 
 ## 5、目录详解
 
+以 GUI.for.Clash 为例：
+
 ```
 GUI.for.Clash
 └─ data                      // 程序资源目录
@@ -77,13 +85,3 @@ GUI.for.Clash
 |   └─ user.yaml             // 程序配置文件：APP设置、插件设置
 └─ GUI.for.Clash.exe         // 主程序
 ```
-
-## 疑问与解答
-
-1、为什么和传统的程序安装方式不同？
-
-> GUI.for.Clash 是一款免安装的绿色软件、或者称之为便携版本。这意味着你可以将软件存储在移动设备或便携式存储设备上，方便随时随地使用。
-
-2、为何教程上称之为`安装`？
-
-> 大部分文档都是这样写的。

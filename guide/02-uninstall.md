@@ -10,9 +10,9 @@
 
 2、 删除目录：`%APPDATA%\[BinaryName.exe]`
 
-BinaryName 是程序的名称，如果你按照安装教程改成了 GUI.for.Clash.exe，那目录就是`%APPDATA%\GUI.for.Clash.exe`
+BinaryName 是程序的名称。
 
-3、删除`data`目录
+3、删除`data`目录（可保留）
 
 data 目录与程序同级，是程序运行时生成的，存放着 core 二进制文件、订阅文件、配置文件、规则集文件、插件文件、计划任务文件。
 

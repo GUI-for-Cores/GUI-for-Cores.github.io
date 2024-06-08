@@ -1,6 +1,6 @@
 # 计划任务系统
 
-![](/gfc/resources/301_tasks.png)
+![](/guide/resources/301_tasks.png)
 
 ## 计划任务系统能够做什么？
 
@@ -26,15 +26,15 @@
 
 1、定时更新订阅
 
-![](/gfc/resources/302_tasks.png)
+![](/guide/resources/302_tasks.png)
 
 2、定时更新规则集
 
-![](/gfc/resources/303_tasks.png)
+![](/guide/resources/303_tasks.png)
 
 1、定时更新插件
 
-![](/gfc/resources/304_tasks.png)
+![](/guide/resources/304_tasks.png)
 
 1、定时运行插件
 
@@ -47,14 +47,14 @@ const onTask = () => {
 };
 ```
 
-![](/gfc/resources/305_tasks.png)
+![](/guide/resources/305_tasks.png)
 
 1、定时执行脚本
 
 脚本中可以直接写`return`，返回值会出现在日志中
 
-![](/gfc/resources/306_tasks.png)
+![](/guide/resources/306_tasks.png)
 
 ## 定时任务日志
 
-![](/gfc/resources/307_tasks.png)
+![](/guide/resources/307_tasks.png)

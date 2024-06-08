@@ -2,7 +2,7 @@
 
 插件系统有着非常的强大的功能，请不要安装来源不明、加密、代码复杂难以审计插件，它可能会损坏你的电脑。
 
-![](/gfc/resources/101_plugins.png)
+![](/guide/resources/101_plugins.png)
 
 ## 插件系统能够做什么？
 
@@ -100,15 +100,15 @@ const onUninstall = async () => {
 
 首先创建一个插件：
 
-![](/gfc/resources/102_plugin_example.png)
+![](/guide/resources/102_plugin_example.png)
 
 然后编写对应的代码：
 
-![](/gfc/resources/103_plugin_example.png)
+![](/guide/resources/103_plugin_example.png)
 
 最后可以尝试安装、运行、卸载插件
 
-![](/gfc/resources/104_plugin_example.png)
+![](/guide/resources/104_plugin_example.png)
 
 下面的插件示例需要同样的操作，先创建插件、再编写插件代码、最后运行。
 
@@ -238,6 +238,6 @@ scheduledTasksStore.addScheduledTask(s: ScheduledTaskType)
 
 插件中心是为了方便用户下载常用的插件而设立的仓库，[Plugin-Hub](https://github.com/GUI-for-Cores/Plugin-Hub)。
 
-![](/gfc/resources/105_plugin_hub.png)
+![](/guide/resources/105_plugin_hub.png)
 
 欢迎各位为 GUI 编写插件，并提交你的插件到插件中心。
