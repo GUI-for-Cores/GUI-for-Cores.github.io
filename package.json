@@ -15,6 +15,6 @@
   "author": "https://github.com/GUI-for-Cores",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.1"
+    "vitepress": "1.2.3"
   }
 }

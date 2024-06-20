@@ -52,3 +52,19 @@ GUI.for.Cores 项目旨在快速生成 core 的配置文件，并将其参数以
 3、我能使用你们的项目进行二次开发吗？
 
 > 当然。你可以使用目前项目里的所有代码，并开发出其他 core 的 GUI 应用。
+
+## 开发计划
+
+- [ ] 迁移框架至 wails-v3-alpha 版本
+
+- [ ] 开发一个流量可视化插件
+
+- [ ] 支持更多的 GNU/Linux 桌面
+
+- [ ] 支持 macOS、 GNU/Linux 下的 TUN 模式
+
+- [ ] 优化 macOS、 GNU/Linux 下的安装升级体验
+
+- [ ] 重构 GUI.for.SingBox 的部分功能
+
+- [ ] 开发安卓端的 GUI 系列
