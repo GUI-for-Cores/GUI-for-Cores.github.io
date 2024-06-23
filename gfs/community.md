@@ -2,9 +2,7 @@
 
 欢迎使用 GUI.for.SingBox，该文档将介绍本项目基本使用指南，以降低用户使用 Sing-Box 的门槛，不再需要维护大量的 json 配置，本项目通过便捷的 GUI 操作即可生成的 Sing-Box 的完整客户端配置并运行；同时，它几乎支持 Sing-Box 作为客户端的全部特性！
 
-<img src="/gfs/resources/main.webp" title="" alt="主界面.png" data-align="center">
-
-# 软件设置项
+## 软件设置项
 
 - `Settings`-`Language`选择语言，目前支持中英语；该 wiki 之后的介绍将基于**中文**语言进行说明
 
@@ -16,7 +14,7 @@
 
 - `自动启动内核程序`：当启动软件时自动启动内核
 
-- `以管理员身份运行`：非 Windows 的`Administrators`用户组的系统用户建议打开该选项，否则可能出现 Tun 模式无法启动核心或 Tun.stack 为`system`或`mixed`时无法修改系统网络防火墙设置
+- `以管理员身份运行`：非 Windows 的`Administrators`用户组的系统用户建议打开该选项，否则会出现 Tun 模式无法启动核心或 Tun.stack 为`system`或`mixed`时无法修改系统网络防火墙设置
 
 - `开机时启动`：程序跟随系统启动
 
@@ -24,7 +22,7 @@
 
 - **关于**选项卡可查看本项目版本信息以及在线更新
 
-# 订阅设置(必须)
+## 订阅设置(必须)
 
 GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格式如下
 
@@ -54,11 +52,11 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 <img src="/gfs/resources/subscription-list.webp" title="" alt="订阅信息.png" data-align="center">
 
-# 配置设置(必须)
+## 配置设置(必须)
 
 新建一个配置，任意命名即可，在创建的配置上使用右键菜单可以分别设置，也可以使用向导模式一步一步进行设置！
 
-## 通用设置(包含高级设置-必须)：
+### 通用设置(包含高级设置-必须)：
 
 - **工作模式**：可选全局、规则、直连三种模式，默认建议使用规则模式
 
@@ -92,7 +90,7 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 - **探测域名覆盖目标地址**：Sing-Box 的`sniff_override_destination`字段，用于 mixed 和 tun 入站
 
-## TUN 设置(非必须)：
+### TUN 设置(非必须)：
 
 - **TUN 模式堆栈**：可选`System`、`gVisor`、`Mixed`三种，当使用`Mixed`时，TCP 使用`System`栈，UDP 使用`gVisor`栈
 
@@ -106,7 +104,7 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 - **独立于端点的 NAT**：建议打开
 
-## 代理组设置(必须)：
+### 代理组设置(必须)：
 
 <img src="/gfs/resources/proxy-groups.webp" title="" alt="代理组列表.png" data-align="center">
 
@@ -116,7 +114,7 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 可以根据需求添加/编辑/删除代理组
 
-## 路由规则设置(必须)
+### 路由规则设置(必须)
 
 这里着重介绍以下最常用最实用几种，分别是`Clash模式`、`Fallback`、`协议`、`内联规则`以及`(远程)规则集`
 
@@ -132,7 +130,7 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 - **(远程)规则集**：对应 Sing-Box 的 rule_set 功能，用途是将 geoip 或 geosite 需要用到的部分单独取出来，理论效率比直接使用 geoip/geosite 更高且在处理路由规则时更低的核心占用
 
-## DNS 设置(必须)
+### DNS 设置(必须)
 
 - **本地 DNS**：用于本地使用直连出站的 DNS 服务器，通常使用国内 DNS，支持 UDP53/QUIC/DoH/DoT
 
@@ -150,17 +148,17 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 - **Fake-IP 排除**：列表中的域名不会使用 Fake-IP (需配合 DNS 规则)
 
-## DNS 规则设置(必须)
+### DNS 规则设置(必须)
 
 <img src="/gfs/resources/dns-rules.webp" title="" alt="DNS规则设置.png" data-align="center">
 
 DNS 规则设置和`路由规则设置`方法一样，需要注意 any 出站选中一个 DNS Server，以及前面提及的 DNS 设置中如果设置了 Fake-IP 排除的话，需要在 DNS 规则中启用 Fake-IP 规则。
 
-# 规则集
+## 规则集
 
 规则集有两种方式，本地规则集和远程规则集
 
-## 本地规则集
+### 本地规则集
 
 <img src="/gfs/resources/rulesets.webp" title="" alt="本地规则集.png" data-align="center">
 
@@ -170,13 +168,13 @@ DNS 规则设置和`路由规则设置`方法一样，需要注意 any 出站选
 
 - 使用本地创建 json 格式的 source 规则集，格式参考[源文件格式 - sing-box](https://sing-box.sagernet.org/zh/configuration/rule-set/source-format/)和[无头规则 - sing-box](https://sing-box.sagernet.org/zh/configuration/rule-set/headless-rule/)
 
-## 远程规则集
+### 远程规则集
 
 远程规则集通常是在设置`路由规则设置`或`DNS规则设置`中使用，即直接使用链接形式添加规则集
 
 <img src="/gfs/resources/remote-rulesets.webp" title="" alt="远程规则集.png" data-align="center">
 
-## 规则集获取方式
+### 规则集获取方式
 
 - GEOIP：
 
@@ -190,9 +188,7 @@ DNS 规则设置和`路由规则设置`方法一样，需要注意 any 出站选
 
   - [GitHub - SagerNet/sing-geosite at rule-set](https://github.com/SagerNet/sing-geosite/tree/rule-set)
 
-# 注意事项
+## 注意事项
 
-- `内核缓存`：如果在对应`配置`的`通用设置`-`高级设置`中启用了`持久化缓存`或`持久化Fake-IP`选项，将会在`data/sing-box`目录下存储`cache.db`文件，如果更改了代理、DNS 以及规则集相关设置，建议停止核心并点击`清除持久化缓存`，否则可能导致部分站点 SSL 报错
-
-- 非 Administrators 用户组的用户建议打开`设置`-`通用`中的`以管理员身份运行`，否则无法使用 TUN 启动内核、无法实现开机自启
+- 非 Administrators 用户组的用户建议打开`设置`-`通用`中的`以管理员身份运行`，否则无法使用 TUN 启动内核
 - 若代理节点标签(tag)使用了国旗等图标无法正常显示，请安装插件【Twemoji.Mozilla】。
