@@ -39,6 +39,12 @@ export default defineConfig({
           { text: "社区版教程", link: "/gfs/community.md" },
         ],
       },
+      {
+        text: "社区教程",
+        items: [
+          { text: "添加节点和规则集", link: "/community/01-add-proxies-and-rulesets.md" },
+        ],
+      },
     ],
 
     footer: {
