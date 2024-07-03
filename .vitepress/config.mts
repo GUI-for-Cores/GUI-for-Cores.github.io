@@ -19,6 +19,7 @@ export default defineConfig({
         items: [
           { text: "安装", link: "/guide/01-install.md" },
           { text: "卸载", link: "/guide/02-uninstall.md" },
+          { text: "更新", link: "/guide/09-update.md" },
           { text: "运行原理", link: "/guide/03-how-it-works.md" },
           { text: "插件系统", link: "/guide/04-plugins.md" },
           { text: "计划任务系统", link: "/guide/05-tasks.md" },
@@ -42,7 +43,10 @@ export default defineConfig({
       {
         text: "社区教程",
         items: [
-          { text: "添加节点和规则集", link: "/community/01-add-proxies-and-rulesets.md" },
+          {
+            text: "添加节点和规则集",
+            link: "/community/01-add-proxies-and-rulesets.md",
+          },
         ],
       },
     ],

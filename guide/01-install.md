@@ -74,6 +74,7 @@ GUI.for.Clash
 |   ├─ .cache                // 缓存文件夹，临时文件应该放在此目录
 |   ├─ mihomo                // 内核程序目录
 |   ├─ plugins               // 插件目录，仅存放插件源码，一个插件对应一个plugin-xxx.js文件
+|   ├─ rolling-release       // 滚动发行资源存放目录，存放前端编译后的文件
 |   ├─ rulesets              // 规则集目录，供内核程序引用
 |   ├─ subscribes            // 订阅目录，供内核程序引用
 |   ├─ third                 // 第三方程序目录，插件下载的第三方程序应该放在本目录运行
