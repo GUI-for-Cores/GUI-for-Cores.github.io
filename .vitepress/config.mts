@@ -23,6 +23,7 @@ export default defineConfig({
           { text: "运行原理", link: "/guide/03-how-it-works.md" },
           { text: "插件系统", link: "/guide/04-plugins.md" },
           { text: "计划任务系统", link: "/guide/05-tasks.md" },
+          { text: "混入与脚本", link: "/guide/06-mixin-script.md" },
           { text: "使用技巧", link: "/guide/08-skills.md" },
         ],
       },

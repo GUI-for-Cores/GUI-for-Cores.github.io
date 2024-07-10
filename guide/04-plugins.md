@@ -6,7 +6,7 @@
 
 ## 插件系统能够做什么？
 
-- 修改你的 APP 主题、语言，管理你的配置、订阅、规则组、内核。
+- 修改你的 APP 主题、语言，管理你的配置、订阅、规则集、内核。
 
 - 对生成的配置进行修改、对订阅的结果进行修改。
 
@@ -44,7 +44,7 @@
 - 1 运行中，推荐 onRun 方法中作为返回值
 - 2 已停止，推荐自定义菜单 Stop 方法中作为返回值
 
-以下是一个示例
+以下是一个示例，包含了所有的钩子方法。
 
 ```javascript
 /**
@@ -64,6 +64,14 @@ const Stop = async () => {
 };
 
 /**
+ * 自定义菜单项：运行 - Start
+ */
+const Start = async () => {
+  await StartMyProgram();
+  return 1; // 表示插件正在运行中
+};
+
+/**
  * 插件钩子：安装按钮 - onInstall
  */
 const onInstall = async () => {
@@ -78,6 +86,45 @@ const onUninstall = async () => {
   await UninstallMyProgram();
   return 0; // 表示初始状态
 };
+
+/**
+ * 插件钩子：更新订阅时
+ */
+const onSubscribe = async (proxies, subscription) => {
+  return proxies;
+};
+
+/**
+ * 插件钩子：生成配置时
+ */
+const onGenerate = async (config, profile) => {
+  return config;
+};
+
+/**
+ * 插件钩子：启动APP时
+ */
+const onStartup = async () => {};
+
+/**
+ * 插件钩子：关闭APP时
+ */
+const onShutdown = async () => {};
+
+/**
+ * 插件钩子：APP就绪后
+ */
+const onReady = async () => {};
+
+/**
+ * 插件钩子：计划任务执行时
+ */
+const onTask = async () => {};
+
+/**
+ * 插件钩子：配置插件时
+ */
+const onConfigure = async (config, old) => {};
 ```
 
 ## 插件编写规范
@@ -240,7 +287,7 @@ scheduledTasksStore.addScheduledTask(s: ScheduledTaskType)
 
 ![](/guide/resources/105_plugin_hub.png)
 
-从插件中心添加的插件不建议修改元数据，也就是插件卡片右上角的【编辑】按钮，因为发布到插件中心的插件都是调试好的，该有哪些触发器就有哪些触发器，该有哪些菜单以及配置项也都是设计好的，有些会用户随意编辑这些插件，比如添加了源码里没有实现的触发器，就会导致插件执行失败。
+从插件中心添加的插件不建议修改元数据，也就是插件卡片右上角的【~~编辑~~】按钮(已改为`【开发】`)，因为发布到插件中心的插件都是调试好的，该有哪些触发器就有哪些触发器，该有哪些菜单以及配置项也都是设计好的，有些会用户随意编辑这些插件，比如添加了源码里没有实现的触发器，就会导致插件执行失败。
 
 那么为什么不限制编辑按钮呢？因为我们想把最大的权限交给用户，毕竟有些有想法的用户想对已有插件进行扩展，增加自己想要的功能，GUI 不会限制这部分用户。
 
