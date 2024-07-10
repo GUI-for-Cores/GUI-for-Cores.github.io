@@ -27,7 +27,7 @@
 GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格式如下
 
 ```json
-{
+[
     {
         "type": "vless",
         "tag": "Proxy1",
@@ -41,7 +41,7 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
         "tag": "Proxy2",
         ...
     }
-}
+]
 ```
 
 这里以手动管理方式的订阅为例，之后可以使用 GUI 进行节点管理
