@@ -2,21 +2,22 @@ import { defineConfig } from "vitepress";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "GUI for Cores Docs",
+  title: "GUI for Cores 文档",
   description: "GUI for Cores Docs",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Home", link: "/" },
-      { text: "Guide", link: "/guide/index.md" },
-      { text: "TG Group", link: "https://t.me/GUI_for_Cores" },
-      { text: "TG Channel", link: "https://t.me/GUI_for_Cores_Channel" },
+      { text: "主页", link: "/" },
+      { text: "指南", link: "/guide/index.md" },
+      { text: "群组", link: "https://t.me/GUI_for_Cores" },
+      { text: "频道", link: "https://t.me/GUI_for_Cores_Channel" },
     ],
 
     sidebar: [
       {
         text: "通用文档",
         items: [
+          { text: "项目指南", link: "/guide/index.md" },
           { text: "安装", link: "/guide/01-install.md" },
           { text: "卸载", link: "/guide/02-uninstall.md" },
           { text: "更新", link: "/guide/09-update.md" },
