@@ -171,12 +171,17 @@ payload:
 
 ```
 {
-  "domain_suffix": [
-    "example.com",
-    "example2.com"
-  ],
-  "process_name": [
-    "test.exe"
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "example.com",
+        "example2.com"
+      ],
+      "process_name": [
+        "test.exe"
+      ]
+    }
   ]
 }
 ```
