@@ -14,7 +14,7 @@
 
 若选择`编辑节点`，则再点击右上角的`添加代理`按扭，填入 mihomo 的 `proxies` 段配置，一次填入一个节点，如
 
-```
+```yaml
 name: "vless-reality-vision"
 type: vless
 server: server
@@ -33,7 +33,7 @@ client-fingerprint: chrome
 
 若选择`编辑节点（源文件）`，可直接填入 mihomo 的 `proxies` 所有节点配置，如
 
-```
+```yaml
 proxies:
   - name: "vless-reality-vision"
     type: vless
@@ -69,7 +69,7 @@ proxies:
 
 若选择`编辑节点`，则再点击右上角的`添加代理`按扭，填入 sing-box 的 `outbounds` 段配置，一次填入一个节点，如
 
-```
+```json
 {
   "type": "vless",
   "tag": "vless-out",
@@ -142,19 +142,19 @@ proxies:
 
 若选择`编辑规则`，则按照以下格式先填入规则并点击`添加`按扭
 
-```
+```yaml
 DOMAIN-SUFFIX,example.com
 ```
 
 若需要一次性填入多个规则时， `DOMAIN-SUFFIX` 不可省略，多个规则之间使用 `|` 分隔，如
 
-```
+```yaml
 DOMAIN-SUFFIX,example.com|DOMAIN-SUFFIX,example2.com
 ```
 
 若选择`打开文件`，按照以下格式填入规则并保存
 
-```
+```yaml
 payload:
   - DOMAIN-SUFFIX,example.com
   - DOMAIN-SUFFIX,example2.com
@@ -169,21 +169,21 @@ payload:
 
 保存新建规则集后，右键点击此规则集并选择`编辑规则集文件`，则按照以下格式先填入规则并点击`保存`按扭
 
-```
+```json
 {
   "version": 1,
   "rules": [
     {
-      "domain_suffix": [
-        "example.com",
-        "example2.com"
-      ],
-      "process_name": [
-        "test.exe"
-      ]
+      "domain_suffix": ["example.com", "example2.com"]
+    },
+    {
+      "process_name": "test.exe"
     }
   ]
 }
 ```
 
 其余规则如 `process_path` 等的配置方式相同，详情请自行参考 sing-box 手册
+
+各键值之间 "AND" 与 "OR" 的匹配关系请参见
+https://sing-box.sagernet.org/configuration/rule-set/headless-rule/#default-fields

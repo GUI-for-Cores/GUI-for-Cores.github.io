@@ -24,7 +24,7 @@ sudo systemctl enable --now polkit
 - 文件名可自定义
 
 ```bash
-sudo vi /etc/polkit-1/rules.d/99-nopassword.ruIes
+sudo vi /etc/polkit-1/rules.d/99-nopassword.rules
 ```
 
 - 添加以下内容并保存退出
@@ -32,12 +32,12 @@ sudo vi /etc/polkit-1/rules.d/99-nopassword.ruIes
 ```javascript
 polkit.addRule(function (action, subject) {
   if (
-    (action.id == 'org.freedesktop.resolve1.set-domains' ||
-      action.id == 'org.freedesktop.resolve1.set-default-route' ||
-      action.id == 'org.freedesktop.resolve1.set-dns-servers') &&
+    (action.id == "org.freedesktop.resolve1.set-domains" ||
+      action.id == "org.freedesktop.resolve1.set-default-route" ||
+      action.id == "org.freedesktop.resolve1.set-dns-servers") &&
     subject.local &&
     subject.active &&
-    subject.isInGroup('wheel')
+    subject.isInGroup("wheel")
   ) {
     return polkit.Result.YES;
   }
