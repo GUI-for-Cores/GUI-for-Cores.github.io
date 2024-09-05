@@ -8,7 +8,7 @@
 
 2、macOS
 
-备份 data 目录，删除程序，重新执行 [安装](/guide/01-install.html) 操作。
+备份 data 目录，删除程序，重新执行 [安装](/zh/guide/01-install.html) 操作。
 
 ## 滚动更新
 

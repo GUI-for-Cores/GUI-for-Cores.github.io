@@ -6,25 +6,25 @@
 
 如果下载失败，你也可以使用已有的内核文件，将他重命名为`mihomo-${os}-${arch}.exe`或`mihomo-${os}-${arch}-alpha.exe`，并放置在程序的`data/mihomo`目录下，然后重启软件。
 
-![](/gfc/resources/205_how_to_use.png)
+![](/zh/resources/gfc/205_how_to_use.png)
 
 如果一切正常，那么它应该正确显示内核版本，此时你可以使用不同的分支版本，点击一下即可切换。
 
-![](/gfc/resources/206_how_to_use.png)
+![](/zh/resources/gfc/206_how_to_use.png)
 
 ## 导入节点
 
 来到`概览`，界面上有一个`快速开始`按钮，点击后填入订阅链接，GUI 会自动的下载订阅文件，然后获取其中的节点信息，并创建一个以随机 ID 命名的.yaml 文件来存储它。同时 GUI 会创建一份`配置`文件，并自动的关联上刚刚下载的订阅文件。
 
-![](/gfc/resources/200_how_to_use.png)
+![](/zh/resources/gfc/200_how_to_use.png)
 
 如果上一步执行无误，你就可以点击`启动内核`按钮启动程序了。
 
-![](/gfc/resources/207_how_to_use.png)
+![](/zh/resources/gfc/207_how_to_use.png)
 
 默认设置下，GUI 不会改变你系统的任何设置，所以你需要手动开启`系统代理`，当然也可以在`设置`里打开`自动配置系统代理`，如果想使用 TUN 模式，则需要打开`以管理员身份运行`。TUN 模式和系统代理应该保证只有一个处于开启状态。
 
-![](/gfc/resources/208_how_to_use.png)
+![](/zh/resources/gfc/208_how_to_use.png)
 
 ## 进阶玩法
 
@@ -36,7 +36,7 @@
 
 若订阅类型选择为`本地`，建议链接填写为`data/local/${filename}.txt`，更新订阅时会从`链接`里读取文本，处理后保存到`保存路径`里，若是`链接`和`保存路径`填写一致，则更新订阅时程序会跳过保存的步骤，仅更新节点数量等元数据。
 
-![](/gfc/resources/201_how_to_use.png)
+![](/zh/resources/gfc/201_how_to_use.png)
 
 添加完订阅后，可以点击`更新`按钮，将`链接`处的内容保存到`保存路径`内，注意，GUI 只会保存内容中的`proxies`字段。
 
@@ -83,11 +83,11 @@ const onGenerate = (config) => {
 
 表单中的`名称设置`、`通用设置`、`TUN设置`、`DNS设置`就不介绍了，对应 mihomo 官方文档理解即可。这里介绍如何配置分流与代理组。
 
-![](/gfc/resources/209_how_to_use.png)
+![](/zh/resources/gfc/209_how_to_use.png)
 
 新建的配置是具有默认的代理组的，也就是上图中的 5 个组，每个组需要至少引用一个`订阅`或`节点`，否则就会出现左侧的感叹号提醒。点击编辑按钮来到下图。
 
-![](/gfc/resources/210_how_to_use.png)
+![](/zh/resources/gfc/210_how_to_use.png)
 
 图中的区域 1 是当前已添加的代理组，包括了内核内置的 `DIRECT`、`REJECT`。点击它的名称，可以将它引用到当前组中，程序限制了`自我引用`，但你要注意不能出现`循环引用`，即组 A 引用了组 B，组 B 又引用了组 A。
 
@@ -95,11 +95,11 @@ const onGenerate = (config) => {
 
 图中的区域 3 是每一个订阅下的节点列表，展开它，可以单独引用某个节点。这通常用于多个订阅联合使用的情况。
 
-![](/gfc/resources/211_how_to_use.png)
+![](/zh/resources/gfc/211_how_to_use.png)
 
 规则设置界面对应内核配置文件中的 rules 字段，GUI 没有将它变为更清晰的展示，因为了解内核配置的人，上面的展示是更加清晰易懂的。
 
-![](/gfc/resources/212_how_to_use.png)
+![](/zh/resources/gfc/212_how_to_use.png)
 
 点击添加，并选择类型为规则集，下面会出现程序里添加的规则集列表，勾选它即可。如果你的规则集列表是空的，那么在插件中心找到一个叫`一键添加规则集`的插件并运行它吧。
 

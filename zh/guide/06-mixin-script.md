@@ -12,7 +12,7 @@
 
 混入的原理是使用`用户提供的配置`与`GUI生成的配置`进行合并处理，如果两个配置存在冲突，则可以使用`优先级`来指定最终的配置以哪一个为准。
 
-![](/guide/resources/601_mixin.png)
+![](/zh/resources/guide/601_mixin.png)
 
 示例：
 
@@ -61,7 +61,7 @@ dns:
 
 脚本的实现原理和插件的`onGenerate`钩子相同，GUI 会把`GUI生成的配置`通过参数`config`传入`onGenerate`方法，用户对`config`进行修改，然后返回最终的配置。
 
-![](/guide/resources/602_script.png)
+![](/zh/resources/guide/602_script.png)
 
 示例：
 

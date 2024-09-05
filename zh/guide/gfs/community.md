@@ -46,11 +46,11 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 这里以手动管理方式的订阅为例，之后可以使用 GUI 进行节点管理
 
-<img src="/gfs/resources/add-subscription.webp" title="" alt="添加订阅.png" data-align="center">
+<img src="/zh/resources/gfs/add-subscription.webp" title="" alt="添加订阅.png" data-align="center">
 
 `保存路径`填写 json 文件的完整路径，建议使用相对路径，命名之后保存点一下更新，确保订阅正常显示节点数量
 
-<img src="/gfs/resources/subscription-list.webp" title="" alt="订阅信息.png" data-align="center">
+<img src="/zh/resources/gfs/subscription-list.webp" title="" alt="订阅信息.png" data-align="center">
 
 ## 配置设置(必须)
 
@@ -106,11 +106,11 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 ### 代理组设置(必须)：
 
-<img src="/gfs/resources/proxy-groups.webp" title="" alt="代理组列表.png" data-align="center">
+<img src="/zh/resources/gfs/proxy-groups.webp" title="" alt="代理组列表.png" data-align="center">
 
 编辑相应代理组可以将自己添加的订阅节点加入该组
 
-<img src="/gfs/resources/edit-proxy-group.webp" title="" alt="代理组添加节点.png" data-align="center">
+<img src="/zh/resources/gfs/edit-proxy-group.webp" title="" alt="代理组添加节点.png" data-align="center">
 
 可以根据需求添加/编辑/删除代理组
 
@@ -118,7 +118,7 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 这里着重介绍以下最常用最实用几种，分别是`Clash模式`、`Fallback`、`协议`、`内联规则`以及`(远程)规则集`
 
-<img src="/gfs/resources/route-rules.webp" title="" alt="默认路由规则列表.png" data-align="center">
+<img src="/zh/resources/gfs/route-rules.webp" title="" alt="默认路由规则列表.png" data-align="center">
 
 - **Clash 模式**：`global/direct`、应分别设置为使用代理和直连
 
@@ -150,7 +150,7 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 ### DNS 规则设置(必须)
 
-<img src="/gfs/resources/dns-rules.webp" title="" alt="DNS规则设置.png" data-align="center">
+<img src="/zh/resources/gfs/dns-rules.webp" title="" alt="DNS规则设置.png" data-align="center">
 
 DNS 规则设置和`路由规则设置`方法一样，需要注意 any 出站选中一个 DNS Server，以及前面提及的 DNS 设置中如果设置了 Fake-IP 排除的话，需要在 DNS 规则中启用 Fake-IP 规则。
 
@@ -160,7 +160,7 @@ DNS 规则设置和`路由规则设置`方法一样，需要注意 any 出站选
 
 ### 本地规则集
 
-<img src="/gfs/resources/rulesets.webp" title="" alt="本地规则集.png" data-align="center">
+<img src="/zh/resources/gfs/rulesets.webp" title="" alt="本地规则集.png" data-align="center">
 
 本地规则集有如下几种方式设置
 
@@ -172,7 +172,7 @@ DNS 规则设置和`路由规则设置`方法一样，需要注意 any 出站选
 
 远程规则集通常是在设置`路由规则设置`或`DNS规则设置`中使用，即直接使用链接形式添加规则集
 
-<img src="/gfs/resources/remote-rulesets.webp" title="" alt="远程规则集.png" data-align="center">
+<img src="/zh/resources/gfs/remote-rulesets.webp" title="" alt="远程规则集.png" data-align="center">
 
 ### 规则集获取方式
 

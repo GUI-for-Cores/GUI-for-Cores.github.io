@@ -2,7 +2,7 @@
 
 插件系统有着非常的强大的功能，请不要安装来源不明、加密、代码复杂难以审计的插件，它可能会损坏你的电脑。
 
-![](/guide/resources/101_plugins.png)
+![](/zh/resources/guide/101_plugins.png)
 
 ## 插件系统能够做什么？
 
@@ -147,15 +147,15 @@ const onConfigure = async (config, old) => {};
 
 首先创建一个插件：
 
-![](/guide/resources/102_plugin_example.png)
+![](/zh/resources/guide/102_plugin_example.png)
 
 然后编写对应的代码：
 
-![](/guide/resources/103_plugin_example.png)
+![](/zh/resources/guide/103_plugin_example.png)
 
 最后可以尝试安装、运行、卸载插件
 
-![](/guide/resources/104_plugin_example.png)
+![](/zh/resources/guide/104_plugin_example.png)
 
 下面的插件示例需要同样的操作，先创建插件、再编写插件代码、最后运行。
 
@@ -285,7 +285,7 @@ scheduledTasksStore.addScheduledTask(s: ScheduledTaskType)
 
 插件中心是为了方便用户下载常用的插件而设立的仓库，其源码可在此仓库查看：[Plugin-Hub](https://github.com/GUI-for-Cores/Plugin-Hub)。
 
-![](/guide/resources/105_plugin_hub.png)
+![](/zh/resources/guide/105_plugin_hub.png)
 
 从插件中心添加的插件不建议修改元数据，也就是插件卡片右上角的【~~编辑~~】按钮(已改为`【开发】`)，因为发布到插件中心的插件都是调试好的，该有哪些触发器就有哪些触发器，该有哪些菜单以及配置项也都是设计好的，有些会用户随意编辑这些插件，比如添加了源码里没有实现的触发器，就会导致插件执行失败。
 
