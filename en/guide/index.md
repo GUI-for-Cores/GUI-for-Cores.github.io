@@ -1,4 +1,6 @@
 <script setup>
+import CheckBox from '/components/CheckBox'
+
 const GUI_List = [
     'GUI.for.Clash',
     'GUI.for.SingBox'
@@ -31,7 +33,7 @@ The applications based on this project are neither VPN nor proxy applications. T
 
 - Please do not download any of **our** applications aside from the GitHub Releases page. Otherwise, security may be compromised, this is extremely IMPORTANT!
 
-- To all blog and website owners, please do not provide any download links other than GitHub Releases on the grounds of *'convenience'* or *'caring for readers'*
+- To all blog and website owners, please do not provide any download links other than GitHub Releases on the grounds of _'convenience'_ or _'caring for readers'_
 
 - Please do not launch any applications downloaded from unknown sources, even if they are uploaded by the developers of this project in the group. GitHub Releases is the only trustworthy source!
 
@@ -55,16 +57,16 @@ The applications based on this project are neither VPN nor proxy applications. T
 
 ## To Do
 
-- [ ] Migrate the framework to wails-v3-alpha
+- <CheckBox /> Migrate the framework to wails-v3-alpha
 
-- [ ] Develop a visualized traffic usage plugin
+- <CheckBox /> Develop a visualized traffic usage plugin
 
-- [ ] More GNU/Linux desktops support
+- <CheckBox /> More GNU/Linux desktops support
 
-- [ ] TUN mode in macOS and GNU/Linux
+- <CheckBox checked /> TUN mode in macOS and GNU/Linux
 
-- [ ] Better installation and upgrade experience on macOS and GNU/Linux
+- <CheckBox /> Better installation and upgrade experience on macOS and GNU/Linux
 
-- [ ] Rewrite some functions for GUI.for.SingBox
+- <CheckBox /> Rewrite some functions for GUI.for.SingBox
 
-- [ ] GUI applications for Android™
+- <CheckBox /> GUI applications for Android™

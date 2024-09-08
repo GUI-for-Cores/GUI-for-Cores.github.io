@@ -1,4 +1,6 @@
 <script setup>
+import CheckBox from '/components/CheckBox'
+
 const GUI_List = [
     'GUI.for.Clash',
     'GUI.for.SingBox'
@@ -55,16 +57,16 @@ GUI.for.Cores 项目旨在快速生成 core 的配置文件，并将其参数以
 
 ## 开发计划
 
-- [ ] 迁移框架至 wails-v3-alpha 版本
+- <CheckBox /> 迁移框架至 wails-v3-alpha 版本
 
-- [ ] 开发一个流量可视化插件
+- <CheckBox /> 开发一个流量可视化插件
 
-- [ ] 支持更多的 GNU/Linux 桌面
+- <CheckBox /> 支持更多的 GNU/Linux 桌面
 
-- [ ] 支持 macOS、 GNU/Linux 下的 TUN 模式
+- <CheckBox checked /> 支持 macOS、 GNU/Linux 下的 TUN 模式
 
-- [ ] 优化 macOS、 GNU/Linux 下的安装升级体验
+- <CheckBox /> 优化 macOS、 GNU/Linux 下的安装升级体验
 
-- [ ] 重构 GUI.for.SingBox 的部分功能
+- <CheckBox /> 重构 GUI.for.SingBox 的部分功能
 
-- [ ] 开发安卓端的 GUI 系列
+- <CheckBox /> 开发安卓端的 GUI 系列

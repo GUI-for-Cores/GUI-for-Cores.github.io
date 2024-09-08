@@ -18,7 +18,6 @@ Go to the `Settings` page, turn on `Enable Rolling Release`, install the `滚动
 
 Update normally is not user-friendly on macOS, but the experience is better on Windows and GNU/Linux. However, the download size is larger than Rolling Release, and it can be slower if the network connection is poor
 
-滚动更新对三个平台都很友好，且支持自动更新。能够获取更快、更新、更稳定的 GUI 体验。
 Rolling Release is user-friendly on all three platforms and supports automatic updates. It provides faster, newer and more stable GUI experience
 
 Note: Rolling Release is only supported by `GUI.for.Clash v1.8.2` and `GUI.for.SingBox v1.8.1` or later, and `Enable Rolling Release` must be turned on, the `滚动发行` plugin must be installed
