@@ -50,7 +50,7 @@ export const zh = defineConfig({
             items: [
               {
                 text: "插件列表",
-                link: "index",
+                link: "index.md",
               },
             ],
           },
