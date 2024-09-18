@@ -45,6 +45,16 @@ export const zh = defineConfig({
             ],
           },
           {
+            text: "插件中心",
+            base: "/zh/guide/plugin-hub/",
+            items: [
+              {
+                text: "插件列表",
+                link: "index",
+              },
+            ],
+          },
+          {
             text: "社区教程",
             base: "/zh/guide/community/",
             items: [

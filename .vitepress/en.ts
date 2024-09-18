@@ -45,6 +45,16 @@ export const en = defineConfig({
             ],
           },
           {
+            text: "Plugin-Hub",
+            base: "/zh/guide/plugin-hub/",
+            items: [
+              {
+                text: "Plugin list",
+                link: "index",
+              },
+            ],
+          },
+          {
             text: "社区教程",
             base: "/guide/community/",
             items: [
