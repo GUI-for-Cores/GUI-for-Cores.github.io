@@ -32,6 +32,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # 如果未启用 lastUpdated，则不需要
+      - name: Submodule
+        run: |
+          cd /home/runner/work/GUI-for-Cores.github.io/GUI-for-Cores.github.io
+          git submodule update --init
       - uses: pnpm/action-setup@v3 # 如果使用 pnpm，请取消注释
         with:
           version: 9
