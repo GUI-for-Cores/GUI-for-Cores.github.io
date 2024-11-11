@@ -10,7 +10,7 @@
 ## 检查 polkit 服务是否正在运行
 
 ```bash
-sytemctl status polkit
+systemctl status polkit
 ```
 
 若返回状态为除 `active (running)` 之外的结果，运行

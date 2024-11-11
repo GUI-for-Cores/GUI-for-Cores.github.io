@@ -10,7 +10,7 @@
 ## Check If polkit Service Is Running
 
 ```bash
-sytemctl status polkit
+systemctl status polkit
 ```
 
 If the status is not `active (running)`, run the following command:
