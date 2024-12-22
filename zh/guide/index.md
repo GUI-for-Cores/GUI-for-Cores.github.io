@@ -67,6 +67,6 @@ GUI.for.Cores 项目旨在快速生成 core 的配置文件，并将其参数以
 
 - <CheckBox /> 优化 macOS、 GNU/Linux 下的安装升级体验
 
-- <CheckBox /> 重构 GUI.for.SingBox 的部分功能
+- <CheckBox checked /> 重构 GUI.for.SingBox 的部分功能
 
 - <CheckBox /> 开发安卓端的 GUI 系列

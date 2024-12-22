@@ -67,6 +67,6 @@ The applications based on this project are neither VPN nor proxy applications. T
 
 - <CheckBox /> Better installation and upgrade experience on macOS and GNU/Linux
 
-- <CheckBox /> Rewrite some functions for GUI.for.SingBox
+- <CheckBox checked /> Rewrite some functions for GUI.for.SingBox
 
 - <CheckBox /> GUI applications for Android™
