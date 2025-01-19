@@ -4,6 +4,8 @@
 
 ## 软件设置项
 
+<img src="/zh/resources/gfs/v1.9.0/GUI-settings.png" title="" alt="GUI设置.png" data-align="center">
+
 - `Settings`-`Language`选择语言，目前支持中英语；该 wiki 之后的介绍将基于**中文**语言进行说明
 
 - `内核缓存`：生成在`data/sing-box`目录下，用于存储持久化 Fake-IP 数据以及远程规则集数据
@@ -54,11 +56,19 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 ## 配置设置(必须)
 
-新建一个配置，任意命名即可，在创建的配置上使用右键菜单可以分别设置，也可以使用向导模式一步一步进行设置！
+<img src="/zh/resources/gfs/v1.9.0/config-menu.png" title="" alt="右键菜单.png" data-align="center">
+
+点击`添加`新建一个配置，任意命名即可，在创建的配置上使用右键菜单可以分别设置，也可以使用向导模式一步一步进行设置！设置过程中可点击右上角`文档按钮`，预览当前配置。
+
+<img src="/zh/resources/gfs/v1.9.0/add-config.png" title="" alt="新建配置.png" data-align="center">
+
+<img src="/zh/resources/gfs/v1.9.0/perview-config.png" title="" alt="预览配置.png" data-align="center">
 
 ### 通用设置(必须)：
 
 设置一些`配置`的全局选项
+
+<img src="/zh/resources/gfs/v1.9.0/general-settings.png" title="" alt="通用设置.png" data-align="center">
 
 - **工作模式**：Sing-Box 的`clash_api.default_mode`字段，用于设置内核的默认工作模式，可选全局、规则、直连三种模式，分别对应`global`、`rule`、`direct`，建议默认使用规则模式
 
@@ -98,6 +108,8 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 Sing-Box 的`inbounds`字段，用于设置入站配置的选项，可添加或删除指定入站，支持`Mixed`、`Http`、`Socks`、`Tun`，启用的入站将会在生成配置时被添加
 
+<img src="/zh/resources/gfs/v1.9.0/inbounds-settings.png" title="" alt="入站设置.png" data-align="center">
+
 #### Mixed 入站
 
 类型`type`为`mixed`，是一个集合了`socks4`、`socks4a`、`socks5`和`http`服务器的混合入站
@@ -127,6 +139,8 @@ Sing-Box 的`inbounds`字段，用于设置入站配置的选项，可添加或�
 #### Tun 入站
 
 一种透明代理模式，通过创建虚拟网络接口接管系统的所有网络流量，即使应用程序不支持手动设置代理。Windows 需要在设置里启用`以管理员身份运行`，Linux 和 Mac 需要点击内核设置页面的授权按钮进行授权
+
+<img src="/zh/resources/gfs/v1.9.0/inbounds-tun.png" title="" alt="Tun入站.png" data-align="center">
 
 - **名称(必须)**：Sing-Box 的 `inbounds.tag` 字段，用于指定入站标签，默认为 `tun-in`，可自定义
 
@@ -159,11 +173,11 @@ Sing-Box 的`inbounds`字段，用于设置入站配置的选项，可添加或�
 
 Sing-Box 的`outbounds`字段，用于配置节点分组
 
-<img src="/zh/resources/gfs/proxy-groups.webp" title="" alt="代理组列表.png" data-align="center">
+<img src="/zh/resources/gfs/v1.9.0/outbounds-settins.png" title="" alt="出站设置.png" data-align="center">
 
 编辑出站分组可以将自己添加的订阅节点加入该组
 
-<img src="/zh/resources/gfs/edit-proxy-group.webp" title="" alt="代理组添加节点.png" data-align="center">
+<img src="/zh/resources/gfs/v1.9.0/edit-outbounds-group.png" title="" alt="编辑分组.png" data-align="center">
 
 - **名称(必须)**：Sing-Box 的`outbounds.tag`字段，用于设置分组名称，可以添加 emoji 符号
 
@@ -190,6 +204,8 @@ Sing-Box 的`route`字段，用于配置路由规则、规则集等选项
 #### 通用
 设置一些`路由设置`的全局选项
 
+<img src="/zh/resources/gfs/v1.9.0/route-settings.png" title="" alt="路由设置.png" data-align="center">
+
 - **查找进程信息**：Sing-Box 的`route.find_process`字段，启用后将在连接信息内显示进程名称
 
 - **自动检测出站接口**：Sing-Box 的`route.auto_detect_interface`字段，用于自动选择流量出口的网络接口，默认情况下，出站连接会绑定到默认网络接口，以防止在 TUN 模式下出现路由循环。 启用 Tun 入站时，务必启用此选项
@@ -202,6 +218,8 @@ Sing-Box 的`route`字段，用于配置路由规则、规则集等选项
 
 Sing-Box 的`route.rule_set`字段，用于添加和管理当前配置内的本地或远程规则集
 
+<img src="/zh/resources/gfs/v1.9.0/route-rule_set.png" title="" alt="规则集.png" data-align="center">
+
 - **名称(必须)**：Sing-Box 的`tag`字段，用于设置规则集名称，以便在路由规则和 DNS 规则内引用
 
 - **类型**：Sing-Box 的`type`字段，用于设置规则集类型，可选内联、本地、远程，分别对应`inline`、`local`、`remote`
@@ -209,6 +227,8 @@ Sing-Box 的`route.rule_set`字段，用于添加和管理当前配置内的本�
 - `内联规则集`请参考[规则集 - sing-box](https://sing-box.sagernet.org/zh/configuration/rule-set/)
 
 - `本地规则集`需要先在软件的规则集页面进行添加，才能从配置内引用
+
+<img src="/zh/resources/gfs/v1.9.0/edit-rule_set-remote.png" title="" alt=" 编辑规则集.png" data-align="center">
 
 - `远程规则集`：类型`type`为`remote`，从指定远程仓库下载的规则集文件，如果缓存已启用，远程规则集将被存储到缓存文件内，可设置项包括：
 
@@ -223,6 +243,8 @@ Sing-Box 的`route.rule_set`字段，用于添加和管理当前配置内的本�
 #### 规则
 
 Sing-Box 的`route.rule`字段，用于设置 Sing-Box 的路由规则、规则动作、DNS 劫持和协议嗅探等选项
+
+<img src="/zh/resources/gfs/v1.9.0/route-rule.png" title="" alt="路由规则.png" data-align="center">
 
 - **规则类型**：选择要添加的规则，可选项包括：
 
@@ -302,6 +324,8 @@ Sing-Box 的`dns`字段，用于配置 DNS 服务器、DNS 规则等选项
 
 设置一些`DNS 设置`的全局选项
 
+<img src="/zh/resources/gfs/v1.9.0/dns-settings.png" title="" alt="DNS设置.png" data-align="center">
+
 - **禁用 DNS 缓存**：Sing-Box 的`dns.disable_cache`字段，用于设置 DNS 查询的记录是否缓存，一般无需启用
 
 - **禁用 DNS 缓存过期**：Sing-Box 的`dns.disable_expire`字段，用于设置 DNS 查询缓存是否会过期，一般无需启用
@@ -324,6 +348,8 @@ Sing-Box 的`dns`字段，用于配置 DNS 服务器、DNS 规则等选项
 
 Sing-Box 的`dns.servers`字段，用于添加和配置 DNS 查询服务器，一般情况默认即可
 
+<img src="/zh/resources/gfs/v1.9.0/dns-servers.png" title="" alt="DNS服务器.png" data-align="center">
+
 - **名称**：Sing-Box 的`dns.servers.tag`字段，用于设置 DNS 服务器的名称
 
 - **地址**：Sing-Box 的`dns.servers.address`字段，用于设置 DNS 服务器的地址，支持多种协议和格式，可填写 IP 地址、域名、`local`、`fakeip`等，详情查看[DNS 服务器 - sing-box](https://sing-box.sagernet.org/zh/configuration/dns/server/#address)
@@ -341,6 +367,8 @@ Sing-Box 的`dns.servers`字段，用于添加和配置 DNS 查询服务器，�
 #### 规则
 
 Sing-Box 的`dns.rule`字段，设置方法和`路由规则`基本一致，一般默认即可，仅介绍几个重点选项，其余请参考`路由规则`设置
+
+<img src="/zh/resources/gfs/v1.9.0/dns-rule.png" title="" alt="DNS规则.png" data-align="center">
 
 - **出站**：Sing-Box 的`dns.rule.outbound`字段，用于匹配出站标签，指定出站所使用的 DNS 服务器，`any`可作为值用于匹配任意出站
 
