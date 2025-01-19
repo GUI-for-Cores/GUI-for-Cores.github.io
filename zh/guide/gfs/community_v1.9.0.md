@@ -48,11 +48,11 @@ GUI.for.SingBox 的**订阅**部分只需要包含出站(outbounds)部分，格�
 
 这里以手动管理方式的订阅为例，之后可以使用 GUI 进行节点管理
 
-<img src="/zh/resources/gfs/add-subscription.webp" title="" alt="添加订阅.png" data-align="center">
+<img src="/zh/resources/gfs/v1.9.0/add-subscription.png" title="" alt="添加订阅.png" data-align="center">
 
 `保存路径`填写 json 文件的完整路径，建议使用相对路径，命名之后保存点一下更新，确保订阅正常显示节点数量
 
-<img src="/zh/resources/gfs/subscription-list.webp" title="" alt="订阅信息.png" data-align="center">
+<img src="/zh/resources/gfs/v1.9.0/subscription-list.png" title="" alt="订阅信息.png" data-align="center">
 
 ## 配置设置(必须)
 
@@ -362,8 +362,6 @@ Sing-Box 的`dns.servers`字段，用于添加和配置 DNS 查询服务器，�
 
 - **客户端子网**：Sing-Box 的`dns.servers.client_subnet`字段，同**通用**，一般无需设置
 
-<img src="/zh/resources/gfs/dns-rules.webp" title="" alt="DNS规则设置.png" data-align="center">
-
 #### 规则
 
 Sing-Box 的`dns.rule`字段，设置方法和`路由规则`基本一致，一般默认即可，仅介绍几个重点选项，其余请参考`路由规则`设置
@@ -385,7 +383,7 @@ Sing-Box 的`dns.rule`字段，设置方法和`路由规则`基本一致，一�
 
 ### 本地规则集
 
-<img src="/zh/resources/gfs/rulesets.webp" title="" alt="本地规则集.png" data-align="center">
+<img src="/zh/resources/gfs/v1.9.0/rule_set-list.png" title="" alt="本地规则集.png" data-align="center">
 
 本地规则集有如下几种方式设置
 
