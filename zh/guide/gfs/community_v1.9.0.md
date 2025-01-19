@@ -1,4 +1,4 @@
-# GUI.for.SingBox 用户指南
+# GUI.for.SingBox 用户指南(v1.9.0)
 
 欢迎使用 GUI.for.SingBox，该文档将介绍本项目基本使用指南，以降低用户使用 Sing-Box 的门槛，不再需要维护大量的 json 配置，本项目通过便捷的 GUI 操作即可生成的 Sing-Box 的完整客户端配置并运行；同时，它几乎支持 Sing-Box 作为客户端的全部特性！
 
