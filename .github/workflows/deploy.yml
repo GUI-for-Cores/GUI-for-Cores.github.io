@@ -52,6 +52,19 @@ jobs:
         run: |
           pnpm run build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
           touch .vitepress/dist/.nojekyll
+
+      - name: Build Apps
+        run: |
+          git clone --depth=1 https://github.com/GUI-for-Cores/GUI.for.SingBox.git
+          (
+            cd GUI.for.SingBox/frontend
+            pnpm install && pnpm build-only
+          )
+          mkdir -p .vitepress/dist/apps
+          mv GUI.for.SingBox/frontend/dist .vitepress/dist/apps/gfs
+          mv public/fakeruntime.js .vitepress/dist/apps/gfs
+          sed -i '/<title>/a <script src="./fakeruntime.js"></script>' .vitepress/dist/apps/gfsindex.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
