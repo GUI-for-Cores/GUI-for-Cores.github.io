@@ -20,10 +20,10 @@ const modules = [Navigation, Pagination];
           navigation
         >
           <SwiperSlide class="swiper-slide">
-            <iframe src="/apps/gfs/"></iframe>
+            <iframe src="/apps/gfc/"></iframe>
           </SwiperSlide>
           <SwiperSlide class="swiper-slide">
-            <iframe src="/apps/gfc/"></iframe>
+            <iframe src="/apps/gfs/"></iframe>
           </SwiperSlide>
         </Swiper>
       </div>
