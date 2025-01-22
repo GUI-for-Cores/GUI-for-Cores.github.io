@@ -1,16 +1,9 @@
 window.runtime = {
   WindowSetSystemDefaultTheme() {},
-  EventsOnMultiple(id, fn) {
-    console.log(id, fn)
-  },
+  EventsOnMultiple(id, fn) {},
   WindowIsMaximised() {},
   WindowIsMinimised() {},
-}
-
-const events = {
-  data: [],
-  on() {},
-}
+};
 
 window.go = {
   bridge: {
@@ -18,25 +11,45 @@ window.go = {
       UpdateTray() {},
       UpdateTrayMenus() {},
       GetEnv() {
-        return { os: 'darwin' }
+        return { os: "darwin" };
       },
       Readdir() {
-        return { flag: true, data: '' }
+        return { flag: true, data: "" };
       },
       IsStartup() {
-        return true
+        return true;
       },
-      Requests() {},
+      async Requests(method, url, headers, body, options) {
+        const res = await fetch(url, {
+          method,
+          headers,
+          body: ["HEAD", "GET"].includes(method) ? null : JSON.stringify(body),
+        });
+        let respBody;
+        if (res.headers["Content-Type"]?.includes("application/json")) {
+          respBody = await res.json();
+        } else {
+          respBody = await res.text();
+        }
+        return {
+          flag: true,
+          status: res.status,
+          headers: res.headers,
+          body: respBody,
+        };
+      },
       Writefile(path, content) {
-        localStorage.setItem(path, content)
-        return { flag: true }
+        path = window.location.pathname + path;
+        localStorage.setItem(path, content);
+        return { flag: true };
       },
       Readfile(path) {
-        return { flag: true, data: localStorage.getItem(path) }
+        path = window.location.pathname + path;
+        return { flag: true, data: localStorage.getItem(path) };
       },
       ExecBackground(path, args, out, end) {
-        return { flag: true, data: 999 }
+        return { flag: true, data: 999 };
       },
     },
   },
-}
+};
