@@ -1,12 +1,31 @@
 <script setup>
 import DefaultTheme from "vitepress/theme";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const modules = [Navigation, Pagination];
 </script>
 
 <template>
   <DefaultTheme.Layout>
     <template #home-features-before>
       <div class="app-preview">
-        <iframe src="/apps/gfs/"></iframe>
+        <Swiper
+          :slides-per-view="1"
+          :modules="modules"
+          :pagination="{ clickable: true }"
+          navigation
+        >
+          <SwiperSlide class="swiper-slide">
+            <iframe src="/apps/gfs/"></iframe>
+          </SwiperSlide>
+          <SwiperSlide class="swiper-slide">
+            <iframe src="/apps/gfc/"></iframe>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </template>
   </DefaultTheme.Layout>
@@ -14,15 +33,19 @@ import DefaultTheme from "vitepress/theme";
 
 <style scoped>
 .app-preview {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0 40px 0;
+  width: 60%;
+  margin: 0 auto;
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
   iframe {
     width: 800px;
     height: 540px;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
   }
