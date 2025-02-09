@@ -63,6 +63,7 @@ jobs:
           mkdir -p .vitepress/dist/apps
           mv GUI.for.SingBox/frontend/dist .vitepress/dist/apps/gfs
           cp public/fakeruntime.js .vitepress/dist/apps/gfs
+          wget -O .vitepress/dist/apps/gfs/sing.json https://github.com/GUI-for-Cores/Ruleset-Hub/releases/download/latest/sing.json
           sed -i '/<title>/a <script src="./fakeruntime.js"></script>' .vitepress/dist/apps/gfs/index.html
 
           git clone --depth=1 https://github.com/GUI-for-Cores/GUI.for.Clash.git
@@ -72,6 +73,7 @@ jobs:
           )
           mkdir -p .vitepress/dist/apps
           mv GUI.for.Clash/frontend/dist .vitepress/dist/apps/gfc
+          wget -O .vitepress/dist/apps/gfc/meta.json https://github.com/GUI-for-Cores/Ruleset-Hub/releases/download/latest/meta.json
           cp public/fakeruntime.js .vitepress/dist/apps/gfc
           sed -i '/<title>/a <script src="./fakeruntime.js"></script>' .vitepress/dist/apps/gfc/index.html
 

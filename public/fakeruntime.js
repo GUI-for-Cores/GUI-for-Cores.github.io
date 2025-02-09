@@ -50,6 +50,9 @@ window.go = {
       IsStartup() {
         return true;
       },
+      async Download(url, path) {
+        return { flag: false, body: "Web端不支持" };
+      },
       async Requests(method, url, headers, body, options) {
         if (
           url ==
@@ -60,6 +63,32 @@ window.go = {
             status: 200,
             headers: {},
             body: "alpha-xxxxxxx",
+          };
+        }
+        if (
+          url ==
+          "https://github.com/GUI-for-Cores/Ruleset-Hub/releases/download/latest/meta.json"
+        ) {
+          const res = await fetch("meta.json");
+          const body = await res.text();
+          return {
+            flag: true,
+            status: 200,
+            headers: {},
+            body: body,
+          };
+        }
+        if (
+          url ==
+          "https://github.com/GUI-for-Cores/Ruleset-Hub/releases/download/latest/sing.json"
+        ) {
+          const res = await fetch("sing.json");
+          const body = await res.text();
+          return {
+            flag: true,
+            status: 200,
+            headers: {},
+            body: body,
           };
         }
         const res = await fetch(url, {
