@@ -61,7 +61,7 @@ GUI.for.Cores 项目旨在快速生成 core 的配置文件，并将其参数以
 
 - <CheckBox /> 开发一个流量可视化插件
 
-- <CheckBox /> 支持更多的 GNU/Linux 桌面
+- <CheckBox checked /> 支持更多的 GNU/Linux 桌面
 
 - <CheckBox checked /> 支持 macOS、 GNU/Linux 下的 TUN 模式
 

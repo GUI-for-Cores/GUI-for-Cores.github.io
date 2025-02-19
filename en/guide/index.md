@@ -61,7 +61,7 @@ The applications based on this project are neither VPN nor proxy applications. T
 
 - <CheckBox /> Develop a visualized traffic usage plugin
 
-- <CheckBox /> More GNU/Linux desktops support
+- <CheckBox checked /> More GNU/Linux desktops support
 
 - <CheckBox checked /> TUN mode in macOS and GNU/Linux
 
