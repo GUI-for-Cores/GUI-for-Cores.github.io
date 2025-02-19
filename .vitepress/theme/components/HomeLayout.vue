@@ -50,4 +50,10 @@ const modules = [Navigation, Pagination];
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .app-preview {
+    width: 100%;
+  }
+}
 </style>
