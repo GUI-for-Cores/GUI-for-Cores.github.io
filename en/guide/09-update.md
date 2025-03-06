@@ -8,7 +8,7 @@ Go to the `Settings` - `About`, click on the version number to check for updates
 
 1. macOS
 
-Backup the data folder, delete the application, and follow the steps in [Installation](/en/guide/01-install)
+Go to the `Settings` - `About`, click on the version number to check for updates. then manually replace the main program.
 
 ## Rolling-Release
 

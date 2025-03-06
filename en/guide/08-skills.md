@@ -38,8 +38,6 @@ Clicking on `Controller` opens the groups panel, as does scrolling on the OverVi
 
 ## Update the Applications by Clicking on the `Settings` - `About` Button
 
-- Except on macOS
-
 ## Press Ctrl + Shift + F12 to Open DevTools
 
 - The Applications do not have a log system, so no log is recorded. Debugging can be done in the DevTools

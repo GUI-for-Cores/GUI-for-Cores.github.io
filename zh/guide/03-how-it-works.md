@@ -26,18 +26,4 @@
 
 TUN 模式下 GUI 没有对系统做任何的修改，创建虚拟网卡、自动设置路由均是内核完成的。TUN 模式需要管理员权限，请在设置里打开`以管理员身份运行`，然后退出程序，再打开。不要使用程序的重新启动。
 
-Linux 和 macOS 下的 tun 模式授权较复杂，暂未找到合适的解决方案，请手动执行以下命令：
-
-macOS 下：
-
-```bash
-# 请将${KernelFilePath}替换为真实的内核路径
-osascript -e 'do shell script "chown root:admin ${KernelFilePath}\nchmod +sx ${KernelFilePath}" with administrator privileges'
-```
-
-linux 下：
-
-```bash
-# 请将${KernelFilePath}替换为真实的内核路径
-sudo setcap cap_net_bind_service,cap_net_admin,cap_dac_override=+ep ${KernelFilePath}
-```
+macOS 和 linux 下，请前往【`设置`】-【`内核`】-【`授权`】，授予核心特权，必要时请通过插件【`TUN 模式助手`】进行排错。

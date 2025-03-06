@@ -18,7 +18,6 @@ When running the application for the first time, there is a `Quick Start` button
 
 Choose a profile, click the `Click to Start` button, GUI will generate a `config.yaml` or `config.json` file based on the chosen profile and call the core application to run with it. If multiple profiles were created, right-click on one of them in the `profiles` page, in the `More` submenu, click `Start/Restart with This Profile`. The profiles at the top of the `Profiles` page will be displayed on the `Overview` page, with a maximum of `4` configurations shown
 
-
 ## 3. Configuring as System Proxy
 
 By default, GUI does not configure itself as system proxy automatically. When `System Proxy` button on the `Overview` page is clicked, GUI reads HTTP port and Mixed port from the configuration file and chooses one of them as the system proxy. The Mixed port always has higher priority than the HTTP port
@@ -27,18 +26,4 @@ By default, GUI does not configure itself as system proxy automatically. When `S
 
 In TUN mode, GUI does not make any modifications to the operating system. Creating the virtual adapters and configuring the routes are done by the cores. TUN mode requires administrator privileges. Please turn on `Run as Admin` in the Settings page, exit the application, and re-open it. Please refrain from using the application's Restart button from any menu in this step.
 
-Turning on TUN mode is a bit complicated on Linux and macOS, there is no simplified solution so far, so please run the commands manually:
-
-On macOS:
-
-```bash
-# Please replace ${KernelFilePath} with the actual path of the core file
-osascript -e 'do shell script "chown root:admin ${KernelFilePath}\nchmod +sx ${KernelFilePath}" with administrator privileges'
-```
-
-On Linux:
-
-```bash
-# Please replace ${KernelFilePath} with the actual path of the core file
-sudo setcap cap_net_bind_service,cap_net_admin,cap_dac_override=+ep ${KernelFilePath}
-```
+On macOS and Linux, go to [`Settings`] - [`Kernel`] - [`Authorization`] to grant core privileges. If needed, use the [`TUN Mode Assistant`] plugin for troubleshooting.

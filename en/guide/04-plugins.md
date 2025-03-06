@@ -287,7 +287,7 @@ Plugin-Hub is a repository for users to conveniently download plugins, the sourc
 
 ![](/zh/resources/guide/105_plugin_hub.png)
 
-Modifying the source code of the plugins downloaded from Plugin-Hub is discouraged by clicking the `~~Edit~~` (now changed to `Develope`) button on the plugin card's top right menu. This is because all the plugins published in Plugin-Hub are already debugged, and the triggers, menus and config options are all well-designed. If users arbitrarily edit these plugins, such as adding triggers that are not implemented in the source code, the plugins will fail to execute
+Modifying the source code of the plugins downloaded from Plugin-Hub is discouraged by clicking the ~~`Edit`~~ (now changed to `Develope`) button on the plugin card's top right menu. This is because all the plugins published in Plugin-Hub are already debugged, and the triggers, menus and config options are all well-designed. If users arbitrarily edit these plugins, such as adding triggers that are not implemented in the source code, the plugins will fail to execute
 
 So why do we not remove the `Develope` button? Because we want to leave the choices to the users. Some users might have ideas to improve the capabilities of the existing plugins, GUI does not limit these users
 
@@ -296,7 +296,5 @@ But what if the source code is messed up? Uninstall and delete the plugins, then
 Why do some plugins have the `Install` and `Uninstall` buttons while others do not? This depends on how the plugins work. For example, the plugin AdGuardHome itself does not provide any functionalities; it requires a third-party application to work, that is why the `Install` and `Uninstall` buttons are provided for downloading and uninstalling the application. Moreover, 节点转换 plugin does not require any third-party applications to run, so the `Install` and `Uninstall` buttons are not necessary
 
 Some plugins need to be configured before functioning, right-click on the plugin card and choose the third option `Configure` to open the config page. Some plugins do not have the `Configure` option, which means that these plugins do not require to be configured to function
-
-The `Update` button in the top right menu is only for updating the source code of the plugins, not for updating the metadata. So if the plugins' metadata is updated, for example, a menu entry or a config option is added, the plugin needs to be deleted and re-added. Do not forget to update the plugin list first.
 
 That's about it. We welcome you to write plugins for GUI and submit them to the Plugin-Hub
