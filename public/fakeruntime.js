@@ -67,9 +67,9 @@ window.go = {
         }
         if (
           url ==
-          "https://github.com/GUI-for-Cores/Ruleset-Hub/releases/download/latest/meta.json"
+          "https://github.com/GUI-for-Cores/Ruleset-Hub/releases/download/latest/meta-full.json"
         ) {
-          const res = await fetch("meta.json");
+          const res = await fetch("meta-full.json");
           const body = await res.text();
           return {
             flag: true,
@@ -80,9 +80,9 @@ window.go = {
         }
         if (
           url ==
-          "https://github.com/GUI-for-Cores/Ruleset-Hub/releases/download/latest/sing.json"
+          "https://github.com/GUI-for-Cores/Ruleset-Hub/releases/download/latest/sing-full.json"
         ) {
-          const res = await fetch("sing.json");
+          const res = await fetch("sing-full.json");
           const body = await res.text();
           return {
             flag: true,
