@@ -125,6 +125,7 @@
       "tolerance": "تحمل (میلی‌ثانیه)",
       "interrupt_exist_connections": "قطع ارتباط‌های موجود",
       "direct": "مستقیم",
+      "block": "بلوک",
       "directDesc": "بدون تنظیمات",
       "selector": "انتخابگر",
       "urltest": "تست آدرس",
@@ -238,7 +239,6 @@
         "process_path_regex": "عبارت منظم مسیر فرآیند",
         "clash_mode": "حالت Clash",
         "rule_set": "مجموعه قوانین",
-        "outbound": "خروجی",
         "ip_accept_any": "پذیرش هر IP",
         "inline": "داخلی"
       }
@@ -281,7 +281,6 @@
       "interface": "رابط شبکه",
       "disable_cache": "غیرفعال کردن کش",
       "client_subnet": "ساب‌نت کلاینت",
-      "address_resolver": "مفسر آدرس",
       "disable_expire": "غیرفعال کردن انقضا",
       "independent_cache": "کش مستقل",
       "final": "DNS نهایی",
@@ -299,7 +298,9 @@
     "mode": "حالت",
     "allow-lan": "اجازه دسترسی به LAN",
     "disallow-lan": "عدم اجازه دسترسی به LAN",
-    "notFound": "هسته پیدا نشد"
+    "notFound": "هسته پیدا نشد",
+    "insertionPoint": "قانون جدید در اینجا درج خواهد شد",
+    "addInsertionPoint": "افزودن نقطه درج"
   },
   "router": {
     "overview": "نمای کلی",
@@ -307,8 +308,6 @@
     "rulesets": "مجموعه قوانین",
     "plugins": "افزونه‌ها",
     "settings": "تنظیمات",
-    "debug": "اشکال‌زدایی",
-    "components": "اجزا",
     "about": "درباره",
     "profiles": "پروفایل‌ها",
     "kernel": "هسته",
@@ -322,7 +321,6 @@
     "quickStart": "شروع سریع",
     "noProfile": "به {0} خوش آمدید، برای شروع روی دکمه کلیک کنید.",
     "initSuccessful": "راه‌اندازی موفقیت‌آمیز بود",
-    "initFailed": "به‌روزرسانی اشتراک ناموفق بود، لطفاً به‌صورت دستی اشتراک را به‌روزرسانی کنید",
     "overview": {
       "expandAll": "باز کردن همه",
       "collapseAll": "بستن همه",
@@ -405,6 +403,7 @@
     "useragent": "User-Agent",
     "inSecure": "رد کردن تأیید هویت TLS",
     "requestMethod": "روش درخواست",
+    "requestTimeout": "زمان پایان درخواست (ثانیه)",
     "header": {
       "request": "هدر درخواست",
       "response": "هدر پاسخ"
@@ -457,7 +456,7 @@
       "gui": "رابط کاربری"
     },
     "scriptSettings": {
-      "name": "اسکریپت"
+      "name": "عملیات اسکریپت"
     }
   },
   "profiles": {
@@ -473,7 +472,7 @@
     "dnsRules": "قوانین DNS"
   },
   "ruleset": {
-    "manual": "دستی",
+    "manual": "مدیریت دستی",
     "format": {
       "name": "فرمت",
       "source": "منبع",
@@ -487,16 +486,16 @@
     "updating": "در حال به‌روزرسانی"
   },
   "rulesets": {
-    "hub": "مرکز قوانین",
+    "hub": "مرکز مجموعه‌های قوانین",
     "total": "تعداد مجموعه قوانین",
     "noDesc": "بدون توضیحات",
     "updating": "در حال به‌روزرسانی",
     "updateSuccess": "مرکز قوانین با موفقیت به‌روزرسانی شد",
     "fetching": "در حال دریافت...",
     "empty": "لیست مجموعه قوانین خالی است. لطفاً ابتدا {action} یا از {import} وارد کنید.",
-    "rulesetCount": "تعداد مجموعه قوانین",
+    "rulesetCount": "تعداد قوانین",
     "editRuleset": "ویرایش قوانین",
-    "selectRuleType": "نوع قانون را انتخاب کنید"
+    "selectRuleType": "انتخاب نوع قانون"
   },
   "plugin": {
     "trigger": "محرک",
@@ -514,6 +513,7 @@
     "on::core::stopped": "on::core::stopped",
     "on::before::core::start": "on::before::core::start",
     "on::before::core::stop": "on::before::core::stop",
+    "on::tray::update": "on::tray::update",
     "name": "نام",
     "version": "نسخه",
     "description": "توضیحات",
@@ -561,13 +561,16 @@
     "plugins": "پلاگین‌ها",
     "cron": "کرون",
     "notification": "اعلان اتمام وظیفه",
-    "cronTips": "ثانیه‌ها، دقیقه‌ها، ساعت‌ها، \"روز ماه\" ماه، \"روز هفته\"",
+    "cronTips": "ثانیه دقیقه ساعت روز ماه روز هفته",
     "lastTime": "آخرین زمان",
-    "update::subscription": "به‌روزرسانی::اشتراک",
-    "update::ruleset": "به‌روزرسانی::مجموعه قوانین",
-    "update::plugin": "به‌روزرسانی::پلاگین",
-    "run::plugin": "اجرا::پلاگین",
-    "run::script": "اجرا::اسکریپت"
+    "update::subscription": "update::subscription",
+    "update::ruleset": "update::ruleset",
+    "update::plugin": "update::plugin",
+    "update::all::subscription": "update::all::subscription",
+    "update::all::ruleset": "update::all::ruleset",
+    "update::all::plugin": "update::all::plugin",
+    "run::plugin": "run::plugin",
+    "run::script": "run::script"
   },
   "scheduledtasks": {
     "logs": "گزارش‌ها",
@@ -579,9 +582,15 @@
     "result": "نتیجه",
     "empty": "لیست وظایف زمانبندی شده خالی است. لطفاً ابتدا یک وظیفه زمانبندی شده اضافه کنید.",
     "run": "اکنون اجرا کن",
-    "log": "مشاهده گزارش"
+    "log": "مشاهده لاگ",
+    "next": "زمان اجرای بعدی"
   },
   "settings": {
+    "personalization": "شخصی‌سازی",
+    "behavior": "رفتار",
+    "systemProxy": "پراکسی سیستم",
+    "advanced": "پیشرفته",
+    "features": "ویژگی‌ها",
     "general": "عمومی",
     "theme": {
       "name": "تم",
@@ -592,12 +601,11 @@
     "color": {
       "name": "رنگ",
       "default": "پیش‌فرض",
-      "orange": "نارنجی",
-      "pink": "صورتی",
-      "red": "قرمز",
-      "skyblue": "آبی آسمانی",
       "green": "سبز",
-      "purple": "بنفش"
+      "purple": "بنفش",
+      "custom": "سفارشی",
+      "primary": "رنگ اصلی",
+      "secondary": "رنگ ثانویه"
     },
     "fontFamily": "نوع قلم",
     "resetFont": "بازنشانی نوع قلم",
@@ -635,6 +643,10 @@
     "proxyBypassListTips": "با نقطه‌ویرگول جدا کنید",
     "autoStartKernel": "شروع خودکار هسته",
     "realMemoryUsage": "نمایش میزان واقعی استفاده از حافظه هسته",
+    "autoRestartKernel": {
+      "name": "راه‌اندازی مجدد خودکار هسته هنگام تغییر پیکربندی",
+      "tips": "این کار تمام اتصال‌ها را قطع می‌کند و ممکن است راه‌اندازی مجدد با شکست مواجه شود"
+    },
     "admin": "اجرا به عنوان ادمین",
     "addPluginToMenu": "افزودن افزونه به منوی سینی",
     "addGroupToMenu": "افزودن گروه پراکسی به منوی سینی",
@@ -642,9 +654,12 @@
     "rollingRelease": "فعال کردن نسخه‌ منتشر شونده مداوم",
     "debugOutline": "نمایش حاشیه رابط کاربری",
     "debugNoAnimation": "غیرفعال کردن انیمیشن",
+    "debugNoRounded": "غیرفعال کردن گوشه‌های گرد",
+    "debugBorder": "نمایش حاشیه پنجره",
     "startup": {
       "name": "شروع در بوت",
-      "delay": "تاخیر (ثانیه)"
+      "delay": "تاخیر (ثانیه)",
+      "startupDelay": "تأخیر راه‌اندازی"
     },
     "kernel": {
       "name": "Sing-box",
@@ -652,6 +667,8 @@
       "stable": "نسخه پایدار",
       "alpha": "نسخه آلفا",
       "grant": "اعطای مجوزها",
+      "openTip": "باز کردن محل فایل",
+      "linkTip": "مشاهده در نسخه‌های GitHub",
       "local": "محلی",
       "remote": "از راه دور",
       "update": "به‌روزرسانی",
@@ -673,11 +690,12 @@
     },
     "userAgent": {
       "name": "User-Agent",
-      "reset": "بازنشانی User-Agent"
+      "reset": "بازنشانی User-Agent",
+      "tips": "برای درخواست‌های شبکه این برنامه استفاده می‌شود"
     },
     "githubapi": {
-      "name": "احراز هویت به API REST",
-      "tips": "محدودیت نرخ بالاتر را فراهم می‌کند"
+      "name": "توکن GitHub REST API",
+      "tips": "محدودیت نرخ بالاتری را فراهم می‌کند"
     }
   },
   "about": {

@@ -125,6 +125,7 @@
       "tolerance": "Допустимая задержка (мс.)",
       "interrupt_exist_connections": "Прерывать существующие соединения",
       "direct": "Напрямую",
+      "block": "Блок",
       "directDesc": "Без настроек",
       "selector": "Селектор",
       "urltest": "Тест подключения",
@@ -286,8 +287,6 @@
       "strategy": "Стратегия",
       "inet4_range": "Диапазон поддельных IP-адресов (IPv4)",
       "inet6_range": "Диапазон поддельных IP-адресов (IPv6)",
-      "hosts_path": "Путь к файлу hosts",
-      "predefined": "Предопределённый",
       "rules": {
         "type": "Тип",
         "payload": "Полезная нагрузка",
@@ -299,7 +298,9 @@
     "mode": "Режим",
     "allow-lan": "Разрешить доступ к локальной сети",
     "disallow-lan": "Запретить доступ к локальной сети",
-    "notFound": "Ядро не найдено"
+    "notFound": "Ядро не найдено",
+    "insertionPoint": "Новое правило будет вставлено здесь",
+    "addInsertionPoint": "Добавить точку вставки"
   },
   "router": {
     "overview": "Обзор",
@@ -307,8 +308,6 @@
     "rulesets": "Наборы правил",
     "plugins": "Плагины",
     "settings": "Настройки",
-    "debug": "Дебаг",
-    "components": "Компоненты",
     "about": "О программе",
     "profiles": "Профили",
     "kernel": "Ядро",
@@ -322,7 +321,6 @@
     "quickStart": "Быстрый старт",
     "noProfile": "Добро пожаловать в {0}, нажмите на кнопку, чтобы начать.",
     "initSuccessful": "Инициализация прошла успешно",
-    "initFailed": "Не удалось обновить подписку, вам необходимо обновить подписку вручную",
     "overview": {
       "expandAll": "Развернуть все",
       "collapseAll": "Свернуть все",
@@ -405,6 +403,7 @@
     "useragent": "Пользовательский User-Agent",
     "inSecure": "Пропустить проверку TLS",
     "requestMethod": "Метод запроса",
+    "requestTimeout": "Время ожидания запроса (секунды)",
     "header": {
       "request": "Заголовок запроса",
       "response": "Заголовок ответа"
@@ -514,6 +513,7 @@
     "on::core::stopped": "on::core::stopped",
     "on::before::core::start": "on::before::core::start",
     "on::before::core::stop": "on::before::core::stop",
+    "on::tray::update": "on::tray::update",
     "name": "Имя",
     "version": "Версия",
     "description": "Описание",
@@ -566,6 +566,9 @@
     "update::subscription": "update::subscription",
     "update::ruleset": "update::ruleset",
     "update::plugin": "update::plugin",
+    "update::all::subscription": "update::all::subscription",
+    "update::all::ruleset": "update::all::ruleset",
+    "update::all::plugin": "update::all::plugin",
     "run::plugin": "run::plugin",
     "run::script": "run::script"
   },
@@ -579,10 +582,16 @@
     "result": "Результат",
     "empty": "Список запланированных задач пуст. Сперва{action}запланированную задачу.",
     "run": "Запустить сейчас",
-    "log": "Показать журнал"
+    "log": "Просмотр журнала",
+    "next": "Следующее время запуска"
   },
   "settings": {
-    "general": "Общее",
+    "personalization": "Персонализация",
+    "behavior": "Поведение",
+    "systemProxy": "Системный прокси",
+    "advanced": "Расширенные",
+    "features": "Функции",
+    "general": "Общие",
     "theme": {
       "name": "Тема",
       "light": "Светлая",
@@ -592,12 +601,11 @@
     "color": {
       "name": "Цвет",
       "default": "По-умолчанию",
-      "orange": "Оранжевый",
-      "pink": "Розовый",
-      "red": "Красный",
-      "skyblue": "Небесный",
       "green": "Зелёный",
-      "purple": "Фиолетовый"
+      "purple": "Фиолетовый",
+      "custom": "Пользовательский",
+      "primary": "Основной цвет",
+      "secondary": "Вторичный цвет"
     },
     "fontFamily": "Шрифт",
     "resetFont": "Сбросить шрифт",
@@ -635,6 +643,10 @@
     "proxyBypassListTips": "Разделяйте точкой с запятой",
     "autoStartKernel": "Автоматический запуск ядра",
     "realMemoryUsage": "Показать фактическое использование памяти ядра",
+    "autoRestartKernel": {
+      "name": "Автоматический перезапуск ядра при изменении конфигурации",
+      "tips": "Это прервет все соединения и может завершиться неудачей при перезапуске"
+    },
     "admin": "Запускать от имени администратора",
     "addPluginToMenu": "Добавить плагин в трей-меню",
     "addGroupToMenu": "Добавить группу прокси в трей-меню",
@@ -642,9 +654,12 @@
     "rollingRelease": "Включить потоковые обновления",
     "debugOutline": "Показать контур интерфейса",
     "debugNoAnimation": "Отключить анимацию",
+    "debugNoRounded": "Отключить скругленные углы",
+    "debugBorder": "Показать рамку окна",
     "startup": {
       "name": "Запускать при входе в систему",
-      "delay": "Задержка (сек.)"
+      "delay": "Задержка (сек)",
+      "startupDelay": "Задержка запуска"
     },
     "kernel": {
       "name": "sing-box",
@@ -652,6 +667,8 @@
       "stable": "Стабильная",
       "alpha": "Альфа",
       "grant": "Предоставлить права",
+      "openTip": "Открыть расположение файла",
+      "linkTip": "Посмотреть на GitHub Releases",
       "local": "Локальная версия",
       "remote": "Удаленная версия",
       "update": "Обновить",
@@ -673,10 +690,11 @@
     },
     "userAgent": {
       "name": "Пользовательский User-Agent",
-      "reset": "Сбросить User-Agent"
+      "reset": "Сброс User-Agent",
+      "tips": "Используется для сетевых запросов этого приложения"
     },
     "githubapi": {
-      "name": "Авторизация в REST API",
+      "name": "Токен GitHub REST API",
       "tips": "Обеспечивает более высокий лимит скорости"
     }
   },
