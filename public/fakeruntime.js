@@ -698,7 +698,7 @@ window.runtime = {
     url = url.replace(window.location.pathname, "");
     const { data } = window.go.bridge.App.Readfile(url);
     const link = URL.createObjectURL(
-      new Blob([data], { type: "text/plain; charset=utf-8" })
+      new Blob([data], { type: "text/plain; charset=utf-8" }),
     );
     window.open(link, "_blank");
   },
@@ -711,6 +711,7 @@ window.runtime = {
 window.go = {
   bridge: {
     App: {
+      UpdateTrayAndMenus(tray, menus) {},
       RestartApp() {
         Plugins.message.info("Web端不支持");
       },

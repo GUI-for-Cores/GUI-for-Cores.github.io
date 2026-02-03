@@ -61,7 +61,6 @@ jobs:
           (
             cd GUI.for.SingBox/frontend
             pnpm install
-            sed -i "/__ROLLUP_MANUAL_CHUNKS__/c\  rollupOptions: { output: { manualChunks(id) { if (id.includes('node_modules')) { return id.toString().split('node_modules/')[2].split('/')[0]; } } } }," vite.config.ts
             pnpm build-only
           )
           mkdir -p .vitepress/dist/apps
@@ -74,7 +73,6 @@ jobs:
           (
             cd GUI.for.Clash/frontend
             pnpm install
-            sed -i "/__ROLLUP_MANUAL_CHUNKS__/c\  rollupOptions: { output: { manualChunks(id) { if (id.includes('node_modules')) { return id.toString().split('node_modules/')[2].split('/')[0]; } } } }," vite.config.ts
             pnpm build-only
           )
           mkdir -p .vitepress/dist/apps
