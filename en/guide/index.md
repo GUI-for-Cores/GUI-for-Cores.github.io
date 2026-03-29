@@ -65,6 +65,6 @@ The applications based on this project are neither VPN nor proxy applications. T
 
 - <CheckBox checked /> TUN mode in macOS and GNU/Linux
 
-- <CheckBox /> Better installation and upgrade experience on macOS and GNU/Linux
+- <CheckBox checked /> Better installation and upgrade experience on macOS and GNU/Linux
 
 - <CheckBox checked /> Rewrite some functions for GUI.for.SingBox

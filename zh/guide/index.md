@@ -65,6 +65,6 @@ GUI.for.Cores 项目旨在快速生成 core 的配置文件，并将其参数以
 
 - <CheckBox checked /> 支持 macOS、 GNU/Linux 下的 TUN 模式
 
-- <CheckBox /> 优化 macOS、 GNU/Linux 下的安装升级体验
+- <CheckBox checked /> 优化 macOS、 GNU/Linux 下的安装升级体验
 
 - <CheckBox checked /> 重构 GUI.for.SingBox 的部分功能
