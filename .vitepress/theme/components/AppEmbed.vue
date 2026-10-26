@@ -9,8 +9,8 @@ const props = defineProps({
   title: { type: String, default: "" },
 });
 
-const MIN_WIDTH = 760;
-const ASPECT = 0.6;
+const APP_WIDTH = 800;
+const APP_HEIGHT = 540;
 
 const { isDark } = useData();
 
@@ -18,10 +18,10 @@ const root = ref(null);
 const frame = ref(null);
 const width = ref(0);
 
-const logicalWidth = computed(() => Math.max(width.value, MIN_WIDTH));
-const logicalHeight = computed(() => Math.round(logicalWidth.value * ASPECT));
+const logicalWidth = APP_WIDTH;
+const logicalHeight = APP_HEIGHT;
 const scale = computed(() =>
-  width.value ? width.value / logicalWidth.value : 1,
+  width.value ? Math.min(width.value / APP_WIDTH, 1) : 1,
 );
 
 let resizeObserver;

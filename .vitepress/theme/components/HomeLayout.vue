@@ -234,7 +234,7 @@ const selectApp = (index) => {
 .app-preview {
   position: relative;
   z-index: 1;
-  width: min(100% - 48px, 940px);
+  width: min(100% - 48px, 800px);
   margin: 24px auto 96px;
 }
 
@@ -285,7 +285,7 @@ const selectApp = (index) => {
   justify-content: center;
   gap: 2px;
   width: fit-content;
-  margin: 20px auto 0;
+  margin: 36px auto 0;
   padding: 3px;
   border-radius: var(--gfc-radius-pill);
   border: 1px solid var(--gfc-border-subtle);
