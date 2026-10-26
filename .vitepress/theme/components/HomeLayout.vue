@@ -1,21 +1,29 @@
 <script setup>
 import { ref } from "vue";
 import DefaultTheme from "vitepress/theme";
-import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
-import GUIforClash from "/components/GUIforClash.vue";
-import GUIforSingBox from "/components/GUIforSingBox.vue";
+import AppEmbed from "./AppEmbed.vue";
 
-const modules = [Navigation, Pagination];
-const apps = ["GUI.for.Clash", "GUI.for.SingBox"];
+const apps = [
+  { name: "GUI.for.Clash", src: "/apps/gfc/" },
+  { name: "GUI.for.SingBox", src: "/apps/gfs/" },
+];
 const activeApp = ref(0);
+const appScale = ref(1);
+let swiperInstance = null;
+
+const onSwiper = (swiper) => {
+  swiperInstance = swiper;
+};
 
 const onSlideChange = (swiper) => {
   activeApp.value = swiper.activeIndex;
+};
+
+const selectApp = (index) => {
+  swiperInstance?.slideTo(index);
 };
 </script>
 
@@ -45,27 +53,40 @@ const onSlideChange = (swiper) => {
 
     <template #home-features-before>
       <div class="app-preview">
-        <div class="app-window">
-          <div class="app-window-bar">
+        <div class="app-window" :style="{ '--app-scale': appScale }">
+          <Swiper
+            :slides-per-view="1"
+            :allow-touch-move="false"
+            @swiper="onSwiper"
+            @slide-change="onSlideChange"
+          >
+            <SwiperSlide v-for="app in apps" :key="app.src">
+              <AppEmbed
+                :src="app.src"
+                :title="app.name"
+                @scale="appScale = $event"
+              />
+            </SwiperSlide>
+          </Swiper>
+          <div class="traffic-lights" aria-hidden="true">
             <span class="dot red"></span>
             <span class="dot yellow"></span>
             <span class="dot green"></span>
-            <span class="app-window-title">{{ apps[activeApp] }}</span>
           </div>
-          <Swiper
-            :slides-per-view="1"
-            :modules="modules"
-            :pagination="{ clickable: true }"
-            navigation
-            @slide-change="onSlideChange"
+        </div>
+        <div class="app-switcher" role="tablist">
+          <button
+            v-for="(app, index) in apps"
+            :key="app.src"
+            type="button"
+            role="tab"
+            class="app-switcher-tab"
+            :class="{ active: index === activeApp }"
+            :aria-selected="index === activeApp"
+            @click="selectApp(index)"
           >
-            <SwiperSlide class="swiper-slide">
-              <GUIforClash />
-            </SwiperSlide>
-            <SwiperSlide class="swiper-slide">
-              <GUIforSingBox />
-            </SwiperSlide>
-          </Swiper>
+            {{ app.name }}
+          </button>
         </div>
       </div>
     </template>
@@ -218,29 +239,33 @@ const onSlideChange = (swiper) => {
 }
 
 .app-window {
+  position: relative;
   border-radius: var(--gfc-radius-panel);
   border: 1px solid var(--gfc-border-default);
-  background-color: color-mix(in srgb, var(--gfc-page) 70%, transparent);
+  background-color: var(--gfc-page);
   box-shadow: var(--gfc-shadow-card), 0 40px 120px rgba(0, 0, 0, 0.35);
-  -webkit-backdrop-filter: blur(var(--gfc-blur-glass));
-  backdrop-filter: blur(var(--gfc-blur-glass));
   overflow: hidden;
+  isolation: isolate;
 }
 
-.app-window-bar {
+.traffic-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
-  gap: 8px;
-  height: 40px;
-  padding: 0 16px;
-  border-bottom: 1px solid var(--gfc-border-subtle);
-  background-color: var(--gfc-surface-1);
+  gap: calc(8px * var(--app-scale, 1));
+  height: calc(40px * var(--app-scale, 1));
+  padding-left: calc(16px * var(--app-scale, 1));
+  pointer-events: none;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: calc(12px * var(--app-scale, 1));
+  height: calc(12px * var(--app-scale, 1));
   border-radius: 50%;
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.18);
 }
 
 .dot.red {
@@ -255,49 +280,35 @@ const onSlideChange = (swiper) => {
   background-color: #28c840;
 }
 
-.app-window-title {
-  margin-left: 12px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--gfc-text-secondary);
-}
-
-.swiper-slide {
+.app-switcher {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 32px 32px 48px;
-}
-
-.swiper-slide :deep(iframe) {
-  max-width: 100%;
-  border-radius: var(--gfc-radius-media);
-  border: 1px solid var(--gfc-border-subtle);
-  box-shadow: none;
-}
-
-.app-preview :deep(.swiper-button-prev),
-.app-preview :deep(.swiper-button-next) {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--gfc-border-default);
-  background-color: var(--gfc-surface-1);
-  -webkit-backdrop-filter: blur(var(--gfc-blur-glass));
-  backdrop-filter: blur(var(--gfc-blur-glass));
-  color: var(--gfc-text);
-  --swiper-navigation-size: 14px;
-}
-
-.app-preview :deep(.swiper-pagination-bullet) {
-  background-color: var(--gfc-text);
-  opacity: 0.25;
-}
-
-.app-preview :deep(.swiper-pagination-bullet-active) {
-  opacity: 1;
-  width: 20px;
+  gap: 2px;
+  width: fit-content;
+  margin: 20px auto 0;
+  padding: 3px;
   border-radius: var(--gfc-radius-pill);
+  border: 1px solid var(--gfc-border-subtle);
+  background-color: var(--gfc-surface-3);
+}
+
+.app-switcher-tab {
+  padding: 4px 14px;
+  border-radius: var(--gfc-radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--gfc-text-description);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-switcher-tab:hover {
+  color: var(--gfc-text);
+}
+
+.app-switcher-tab.active {
+  color: var(--gfc-text);
+  background-color: var(--gfc-surface-5);
 }
 
 .bottom-glow {
@@ -328,12 +339,12 @@ const onSlideChange = (swiper) => {
 
 @media screen and (max-width: 768px) {
   .app-preview {
-    width: 100%;
-    padding: 0 12px;
+    width: calc(100% - 24px);
   }
 
-  .swiper-slide {
-    padding: 16px 12px 40px;
+  .app-switcher-tab {
+    padding: 4px 10px;
+    font-size: 12px;
   }
 }
 </style>
