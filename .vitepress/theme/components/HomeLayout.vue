@@ -92,7 +92,7 @@ const selectApp = (index) => {
     </template>
 
     <template #home-features-after>
-      <div class="bottom-glow" aria-hidden="true"></div>
+      <!-- <div class="bottom-glow" aria-hidden="true"></div> -->
     </template>
   </DefaultTheme.Layout>
 </template>
