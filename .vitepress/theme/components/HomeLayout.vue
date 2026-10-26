@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -10,8 +9,6 @@ import "swiper/css/pagination";
 
 import GUIforClash from "/components/GUIforClash.vue";
 import GUIforSingBox from "/components/GUIforSingBox.vue";
-
-const { frontmatter } = useData();
 
 const modules = [Navigation, Pagination];
 const apps = ["GUI.for.Clash", "GUI.for.SingBox"];
@@ -35,12 +32,6 @@ const onSlideChange = (swiper) => {
 
     <template #home-hero-info-before>
       <div class="eyebrow">
-        <img
-          v-if="frontmatter.hero?.image?.src"
-          class="eyebrow-logo"
-          :src="frontmatter.hero.image.src"
-          :alt="frontmatter.hero.image.alt"
-        />
         <span class="eyebrow-label">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
@@ -197,14 +188,6 @@ const onSlideChange = (swiper) => {
   align-items: center;
   gap: 20px;
   margin-bottom: 20px;
-}
-
-.eyebrow-logo {
-  width: 64px;
-  height: 64px;
-  border-radius: 18px;
-  border: 1px solid var(--gfc-border-default);
-  box-shadow: 0 12px 40px rgba(46, 96, 159, 0.35);
 }
 
 .eyebrow-label {
