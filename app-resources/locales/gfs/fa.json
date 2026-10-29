@@ -39,6 +39,10 @@
     "run": "اجرا",
     "refresh": "بازنشانی",
     "confirm": "تأیید",
+    "select": "انتخاب",
+    "selectedCount": "{0} مورد انتخاب شد",
+    "selectAtLeast": "حداقل {0} مورد را انتخاب کنید",
+    "maxSelectionExceeded": "تعداد انتخاب‌ها از حد مجاز بیشتر است",
     "selectAll": "انتخاب همه",
     "http": "راه دور",
     "file": "محلی",
@@ -47,14 +51,17 @@
     "canceled": "لغو شد",
     "downloading": "در حال دانلود...",
     "empty": "داده‌ای وجود ندارد",
-    "pressAgainToClose": "برای بستن پنجره دوباره فشار دهید"
+    "pressAgainToClose": "برای بستن پنجره دوباره فشار دهید",
+    "modalList": "فهرست پنجره‌ها",
+    "openAll": "باز کردن همه",
+    "minimizeAll": "کوچک کردن همه"
   },
   "kernel": {
     "rule": "قانون",
     "global": "جهانی",
     "direct": "مستقیم",
     "ruleDesc": "مسیر یابی ترافیک بر اساس قوانین",
-    "globalDesc": "فقط از گروه جهانی پیروی کن",
+    "globalDesc": "فقط از گروه Global پیروی کن",
     "directDesc": "تمام ترافیک را مستقیماً متصل کن",
     "log": {
       "disabled": "غیرفعال",
@@ -71,10 +78,10 @@
     },
     "clash_api": {
       "external_controller": "کنترل‌کننده خارجی",
-      "external_ui": "رابط کاربری خارجی",
-      "external_ui_download_url": "آدرس دانلود رابط کاربری وب",
-      "external_ui_download_detour": "مسیر جایگزین دانلود رابط وب",
-      "secret": "کلید امنیتی API",
+      "external_ui": "UI خارجی",
+      "external_ui_download_url": "آدرس دانلود Web UI",
+      "external_ui_download_detour": "مسیر جایگزین دانلود Web UI",
+      "secret": "کلید امنیتی RESTful API",
       "default_mode": "حالت پیش‌فرض",
       "access_control_allow_origin": "منابع مجاز برای CORS",
       "access_control_allow_private_network": "اجازه دسترسی از شبکه خصوصی"
@@ -84,8 +91,7 @@
       "path": "مسیر فایل کش",
       "cache_id": "شناسه در فایل کش",
       "store_fakeip": "ذخیره Fake-IP",
-      "store_rdrc": "ذخیره پاسخ رد شده DNS",
-      "rdrc_timeout": "مهلت زمانی برای کش پاسخ رد شده DNS"
+      "store_dns": "ذخیره پاسخ DNS"
     },
     "inbounds": {
       "enable": "فعال کردن",
@@ -108,9 +114,13 @@
         "route_exclude_address": "آدرس مستثنی از مسیر",
         "endpoint_independent_nat": "NAT مستقل از نقطه انتهایی",
         "stack": "پشته",
-        "system": "سیستم",
+        "system": "System",
         "gvisor": "gVisor",
-        "mixed": "ترکیبی"
+        "mixed": "Mixed"
+      },
+      "direct": {
+        "network": "شبکه شنود",
+        "default": "در صورت خالی بودن، هر دو"
       },
       "mixedPort": "پورت ترکیبی",
       "httpPort": "پورت HTTP(s)",
@@ -140,7 +150,9 @@
       "builtIn": "داخلی",
       "subscriptions": "اشتراک‌ها",
       "include": "شامل",
-      "exclude": "حذف شده"
+      "exclude": "حذف شده",
+      "icon": "آیکون",
+      "hidden": "پنهان"
     },
     "route": {
       "tab": {
@@ -152,6 +164,7 @@
       "auto_detect_interface": "تشخیص خودکار رابط",
       "default_interface": "رابط پیش‌فرض",
       "final": "برچسب خروجی نهایی",
+      "default_http_client": "کلاینت HTTP پیش‌فرض",
       "default_domain_resolver": {
         "server": "حل‌کننده پیش‌فرض دامنه",
         "client_subnet": "ساب‌نت کلاینت"
@@ -170,7 +183,7 @@
           "source": "منبع"
         },
         "url": "آدرس",
-        "download_detour": "مسیر جایگزین دانلود",
+        "http_client": "کلاینت HTTP",
         "update_interval": "فاصله بروزرسانی",
         "path": "مسیر",
         "notFound": "مجموعه قوانین از دست رفته است.",
@@ -184,6 +197,8 @@
           "route-options": "گزینه‌های مسیر",
           "reject": "رد کردن",
           "predefined": "از پیش تعریف شده",
+          "evaluate": "ارزیابی",
+          "respond": "پاسخ",
           "hijack-dns": "دخالت در DNS",
           "sniff": "استشمام",
           "resolve": "حل DNS",
@@ -220,27 +235,35 @@
     "rules": {
       "type": {
         "name": "نوع",
-        "inbound": "ورودی",
-        "network": "شبکه",
-        "protocol": "پروتکل",
-        "domain": "دامنه",
-        "domain_suffix": "پسوند دامنه",
-        "domain_keyword": "کلیدواژه دامنه",
-        "domain_regex": "عبارت منظم دامنه",
-        "source_ip_cidr": "CIDR آدرس IP مبدأ",
-        "ip_cidr": "CIDR آدرس IP",
-        "ip_is_private": "IP خصوصی است",
-        "source_port": "پورت مبدأ",
-        "source_port_range": "بازه پورت مبدأ",
-        "port": "پورت",
-        "port_range": "بازه پورت",
-        "process_name": "نام فرآیند",
-        "process_path": "مسیر فرآیند",
-        "process_path_regex": "عبارت منظم مسیر فرآیند",
-        "clash_mode": "حالت Clash",
-        "rule_set": "مجموعه قوانین",
-        "ip_accept_any": "پذیرش هر IP",
-        "inline": "داخلی"
+        "inbound": "ورودی (inbound)",
+        "network": "شبکه (network)",
+        "protocol": "پروتکل (protocol)",
+        "domain": "دامنه (domain)",
+        "domain_suffix": "پسوند دامنه (domain_suffix)",
+        "domain_keyword": "کلیدواژه دامنه (domain_keyword)",
+        "domain_regex": "عبارت منظم دامنه (domain_regex)",
+        "source_ip_cidr": "CIDR آدرس IP مبدأ (source_ip_cidr)",
+        "ip_cidr": "CIDR آدرس IP (ip_cidr)",
+        "ip_is_private": "IP خصوصی است (ip_is_private)",
+        "source_port": "پورت مبدأ (source_port)",
+        "source_port_range": "بازه پورت مبدأ (source_port_range)",
+        "port": "پورت (port)",
+        "port_range": "بازه پورت (port_range)",
+        "process_name": "نام فرآیند (process_name)",
+        "process_path": "مسیر فرآیند (process_path)",
+        "process_path_regex": "عبارت منظم مسیر فرآیند (process_path_regex)",
+        "clash_mode": "حالت Clash (clash_mode)",
+        "rule_set": "مجموعه قوانین (rule_set)",
+        "ip_accept_any": "پذیرش هر IP (ip_accept_any)",
+        "ip_version": "نسخه IP (ip_version)",
+        "query_type": "نوع پرس‌وجو (query_type)",
+        "query_dnssec": "DNSSEC پرس‌وجو (query_dnssec)",
+        "query_client_subnet": "زیرشبکه کلاینت پرس‌وجو (query_client_subnet)",
+        "response_rcode": "کد پاسخ (RCODE) (response_rcode)",
+        "response_answer": "بخش Answer پاسخ (response_answer)",
+        "response_ns": "بخش NS پاسخ (response_ns)",
+        "response_extra": "بخش Extra پاسخ (response_extra)",
+        "inline": "داخلی (Inline)"
       }
     },
     "strategy": {
@@ -282,17 +305,28 @@
       "disable_cache": "غیرفعال کردن کش",
       "client_subnet": "ساب‌نت کلاینت",
       "disable_expire": "غیرفعال کردن انقضا",
-      "independent_cache": "کش مستقل",
+      "optimistic": {
+        "name": "کش DNS خوش‌بینانه",
+        "timeout": "حداکثر عمر کش منقضی"
+      },
       "final": "DNS نهایی",
       "strategy": "استراتژی",
       "inet4_range": "بازه Fake-IP (IPv4)",
       "inet6_range": "بازه Fake-IP (IPv6)",
+      "hosts_path": "مسیر فایل hosts",
+      "predefined": "از پیش تعریف شده",
       "rules": {
         "type": "نوع",
         "payload": "داده",
         "action": "عملیات",
         "server": "سرور",
-        "addRules": "افزودن قوانین Fake-IP DNS"
+        "match_response": "تطبیق پاسخ",
+        "tag": {
+          "name": "برچسب",
+          "none": "بدون تطبیق پاسخ",
+          "latest": "آخرین پاسخ بدون برچسب",
+          "tagged": "پاسخ برچسب‌دار"
+        }
       }
     },
     "mode": "حالت",
@@ -300,7 +334,9 @@
     "disallow-lan": "عدم اجازه دسترسی به LAN",
     "notFound": "هسته پیدا نشد",
     "insertionPoint": "قانون جدید در اینجا درج خواهد شد",
-    "addInsertionPoint": "افزودن نقطه درج"
+    "addInsertionPoint": "افزودن نقطه درج",
+    "missingInsertionPoint": "لطفاً ابتدا یک نقطه درج اضافه کنید",
+    "startupFailed": "راه‌اندازی ناموفق بود، برای جزئیات گزارش‌ها را بررسی کنید"
   },
   "router": {
     "overview": "نمای کلی",
@@ -343,7 +379,7 @@
       "settings": "تنظیمات هسته",
       "settingsTips": "این تغییرات موقتی هستند. برای تغییرات دائمی، لطفاً تنظیمات `پروفایل` را ویرایش کنید.",
       "updateGEO": "به‌روزرسانی GEO",
-      "needPort": "لطفاً ابتدا پورت پروکسی را تنظیم کنید",
+      "needPort": "لطفاً ابتدا یک ورودی Mixed/Http/Socks اضافه کنید",
       "needTun": "لطفاً ابتدا یک ورودی TUN اضافه کنید"
     },
     "controller": {
@@ -353,6 +389,7 @@
       "cardMode": "حالت کارتی",
       "sortBy": "مرتب‌سازی بر اساس تأخیر",
       "delay": "آزمایش تأخیر URL",
+      "timeout": "مهلت تست تأخیر (میلی‌ثانیه)",
       "concurrencyLimit": "همزمانی در تست تأخیر",
       "cardColumns": "تعداد ستون‌های کارت",
       "sensitivity": "حساسیت پیمایش کنترلر",
@@ -366,7 +403,7 @@
       "type": "نوع",
       "processPath": "مسیر فرآیند",
       "sourceIP": "مبدأ",
-      "destinationIP": "آی‌پی مقصد",
+      "destinationIP": "IP مقصد",
       "host": "هاست",
       "inbound": "ورودی",
       "rule": "قانون",
@@ -410,6 +447,7 @@
     }
   },
   "subscribes": {
+    "select": "انتخاب اشتراک‌ها",
     "download": "دانلود",
     "upload": "آپلود",
     "total": "مجموع",
@@ -419,6 +457,9 @@
     "empty": "لیست اشتراک‌ها خالی است. لطفاً ابتدا {action} یک اشتراک.",
     "enterLink": "وارد کردن لینک اشتراک",
     "proxyCount": "تعداد پروکسی‌ها",
+    "updateDirect": "به‌روزرسانی مستقیم",
+    "updateSystemProxy": "به‌روزرسانی از طریق پراکسی سیستم",
+    "updateKernelProxy": "به‌روزرسانی از طریق پراکسی هسته",
     "editProxies": "ویرایش پروکسی‌ها",
     "editSourceFile": "ویرایش فایل پروکسی‌ها (منبع)",
     "copySub": "کپی لینک",
@@ -453,13 +494,14 @@
       "priority": "اولویت",
       "format": "فرمت",
       "mixin": "میکس",
-      "gui": "رابط کاربری"
+      "gui": "GUI"
     },
     "scriptSettings": {
       "name": "عملیات اسکریپت"
     }
   },
   "profiles": {
+    "select": "انتخاب پروفایل‌ها",
     "shouldStop": "قادر به حذف نیستید، این پروفایل در حال استفاده است.",
     "empty": "لیست پروفایل‌ها خالی است، لطفاً ابتدا یک پروفایل {action} کنید.",
     "copytoClipboard": "پیکربندی را برای کپی در کلیپ‌بورد تولید کنید",
@@ -469,7 +511,8 @@
     "inbounds": "ورودی‌ها",
     "outbounds": "خروجی‌ها",
     "dnsServers": "سرورهای DNS",
-    "dnsRules": "قوانین DNS"
+    "dnsRules": "قوانین DNS",
+    "editSourceFile": "ویرایش پیکربندی (فایل منبع)"
   },
   "ruleset": {
     "manual": "مدیریت دستی",
@@ -486,6 +529,7 @@
     "updating": "در حال به‌روزرسانی"
   },
   "rulesets": {
+    "select": "انتخاب مجموعه‌قوانین",
     "hub": "مرکز مجموعه‌های قوانین",
     "total": "تعداد مجموعه قوانین",
     "noDesc": "بدون توضیحات",
@@ -495,16 +539,21 @@
     "empty": "لیست مجموعه قوانین خالی است. لطفاً ابتدا {action} یا از {import} وارد کنید.",
     "rulesetCount": "تعداد قوانین",
     "editRuleset": "ویرایش قوانین",
+    "addToProfile": "افزودن به پروفایل",
     "selectRuleType": "انتخاب نوع قانون"
   },
   "plugin": {
     "trigger": "محرک",
+    "on::enabled": "on::enabled",
+    "on::disabled": "on::disabled",
+    "on::dispose": "on::dispose",
     "on::manual": "on::manual",
     "on::startup": "on::startup",
     "on::shutdown": "on::shutdown",
     "on::generate": "on::generate",
     "on::subscribe": "on::subscribe",
     "on::ready": "on::ready",
+    "on::reload": "on::reload",
     "on::task": "on::task",
     "on::install": "on::install",
     "on::uninstall": "on::uninstall",
@@ -518,8 +567,6 @@
     "version": "نسخه",
     "description": "توضیحات",
     "url": "آدرس اینترنتی",
-    "install": "نصب مورد نیاز",
-    "installed": "نصب شده",
     "path": "مسیر ذخیره",
     "type": "نوع",
     "menus": "منوها",
@@ -537,6 +584,7 @@
     "restore": "بازنشانی به تنظیمات پیش‌فرض"
   },
   "plugins": {
+    "select": "انتخاب پلاگین‌ها",
     "updating": "در حال به‌روزرسانی",
     "empty": "لیست پلاگین‌ها خالی است. لطفاً ابتدا {action} یا از {import} وارد کنید.",
     "source": "منبع",
@@ -550,7 +598,11 @@
     "removeConfiguration": "آیا می‌خواهید پیکربندی پلاگین را حذف کنید؟",
     "testRun": "اجرای آزمایشی",
     "deprecated": "منسوخ شده",
-    "newVersion": "نسخه جدید"
+    "newVersion": "نسخه جدید",
+    "slogan": "{0} را به روش خودتان به کار بگیرید",
+    "sourceConfig": {
+      "name": "منبع پلاگین"
+    }
   },
   "scheduledtask": {
     "name": "نام",
@@ -573,6 +625,7 @@
     "run::script": "run::script"
   },
   "scheduledtasks": {
+    "select": "انتخاب وظایف زمان‌بندی‌شده",
     "logs": "گزارش‌ها",
     "name": "پلاگین",
     "duration": "مدت زمان",
@@ -580,7 +633,7 @@
     "endTime": "زمان پایان",
     "time": "زمان",
     "result": "نتیجه",
-    "empty": "لیست وظایف زمانبندی شده خالی است. لطفاً ابتدا یک وظیفه زمانبندی شده اضافه کنید.",
+    "empty": "لیست وظایف زمانبندی شده خالی است. لطفاً ابتدا یک وظیفه زمانبندی شده{action}.",
     "run": "اکنون اجرا کن",
     "log": "مشاهده لاگ",
     "next": "زمان اجرای بعدی"
@@ -608,6 +661,7 @@
       "secondary": "رنگ ثانویه"
     },
     "fontFamily": "نوع قلم",
+    "systemTitleBar": "استفاده از نوار عنوان و حاشیه سیستم",
     "resetFont": "بازنشانی نوع قلم",
     "appFolder": {
       "name": "پوشه برنامه",
@@ -629,18 +683,35 @@
       "fullscreen": "تمام صفحه"
     },
     "webviewGpuPolicy": {
-      "name": "سیاست Gpu وب‌ویو",
+      "name": "سیاست GPU در Webview",
       "always": "همیشه",
       "onDemand": "بسته به درخواست",
       "never": "هرگز"
     },
     "needRestart": "راه‌اندازی مجدد لازم است",
     "needAdmin": "نیاز به دسترسی ادمین",
+    "network": "درخواست شبکه",
     "exitOnClose": "خروج از برنامه هنگام بستن پنجره",
     "closeKernelOnExit": "بستن هسته هنگام خروج از برنامه",
     "autoSetSystemProxy": "تنظیم خودکار / پاک کردن پروکسی سیستم",
+    "requestProxy": {
+      "name": "پراکسی درخواست",
+      "global": "پیروی از برنامه",
+      "none": "بدون پراکسی",
+      "system": "استفاده از پراکسی سیستم",
+      "kernel": "استفاده از پراکسی هسته",
+      "custom": "پراکسی سفارشی",
+      "test": "تست",
+      "testSuccess": "تست پراکسی موفق بود",
+      "empty": "پراکسی پیکربندی نشده است"
+    },
     "proxyBypassList": "فهرست عبور از پروکسی",
     "proxyBypassListTips": "با نقطه‌ویرگول جدا کنید",
+    "systemProxyServices": "نام سرویس‌های شبکه",
+    "autoSetSystemDNS": "پیکربندی خودکار DNS سیستم",
+    "autoSetSystemDNSTips": "برای ربودن DNS در حالت TUN استفاده می‌شود",
+    "systemProxyDNS": "DNS هنگام اجرای هسته",
+    "systemDefaultDNS": "DNS هنگام توقف هسته",
     "autoStartKernel": "شروع خودکار هسته",
     "realMemoryUsage": "نمایش میزان واقعی استفاده از حافظه هسته",
     "autoRestartKernel": {
@@ -651,10 +722,14 @@
     "addPluginToMenu": "افزودن افزونه به منوی سینی",
     "addGroupToMenu": "افزودن گروه پراکسی به منوی سینی",
     "multipleInstance": "اجازه به چندین نمونه از برنامه",
+    "contentProtection": "محافظت از محتوا",
+    "contentProtectionTips": "جلوگیری از ضبط صفحه (نیاز به راه‌اندازی مجدد)",
     "rollingRelease": "فعال کردن نسخه‌ منتشر شونده مداوم",
+    "debugModalSideBySide": "باز کردن پنجره‌ها در کنار هم",
     "debugOutline": "نمایش حاشیه رابط کاربری",
     "debugNoAnimation": "غیرفعال کردن انیمیشن",
     "debugNoRounded": "غیرفعال کردن گوشه‌های گرد",
+    "debugUsePointer": "استفاده از نشانگر اشاره‌گر",
     "debugBorder": "نمایش حاشیه پنجره",
     "startup": {
       "name": "شروع در بوت",
@@ -696,6 +771,12 @@
     "githubapi": {
       "name": "توکن GitHub REST API",
       "tips": "محدودیت نرخ بالاتری را فراهم می‌کند"
+    },
+    "githubDownloadAcceleration": {
+      "name": "شتاب‌دهی دانلود GitHub",
+      "tips": "دانلود منابع GitHub را سریع‌تر می‌کند",
+      "mirror": "آینه GitHub",
+      "reset": "بازنشانی آینه"
     }
   },
   "about": {
@@ -703,19 +784,27 @@
     "restart": "راه‌اندازی مجدد برنامه",
     "noDownloadLink": "هیچ لینک دانلودی یافت نشد",
     "updateSuccessfulRestart": "بروزرسانی انجام شد، لطفاً برنامه را مجدداً راه‌اندازی کنید",
-    "updateSuccessfulReplace": "دانلود به پایان رسید، لطفاً برنامه را به‌صورت دستی جایگزین کنید",
     "updateSuccessful": "بروزرسانی انجام شد",
     "newVersion": "نسخه جدیدی یافت شد",
     "latestVersion": "در حال حاضر آخرین نسخه نصب شده است"
   },
   "titlebar": {
+    "pin": "سنجاق کردن",
+    "unpin": "برداشتن سنجاق",
+    "minimize": "کوچک کردن",
+    "maximize": "بزرگ کردن",
+    "restore": "بازگردانی",
+    "close": "بستن",
     "resetSize": "بازنشانی اندازه پنجره",
     "reload": "بارگیری مجدد پنجره",
     "restart": "راه‌اندازی مجدد برنامه",
     "exitApp": "خروج از برنامه",
-    "waiting": "در انتظار خروج برنامه...",
-    "timeout": "مهلت خروج برنامه به پایان رسید. آیا می‌خواهید آن را به اجبار ببندید؟",
-    "exitError": "هنگام خروج خطایی رخ داد. آیا می‌خواهید آن را به اجبار ببندید؟\n\nدلیل: {reason}"
+    "exitPending": "در انتظار خروج برنامه...",
+    "exitTimeout": "مهلت خروج برنامه به پایان رسید. آیا می‌خواهید آن را به اجبار ببندید؟",
+    "exitError": "هنگام خروج خطایی رخ داد. آیا می‌خواهید آن را به اجبار ببندید؟\n\nدلیل: {reason}",
+    "reloadPending": "در انتظار بارگیری مجدد برنامه...",
+    "reloadTimeout": "مهلت بارگیری مجدد به پایان رسید. آیا می‌خواهید به اجبار بارگیری مجدد کنید؟",
+    "reloadError": "هنگام بارگیری مجدد خطایی رخ داد. آیا می‌خواهید به اجبار بارگیری مجدد کنید؟\n\nدلیل: {reason}"
   },
   "outbound": {
     "select": "🚀 انتخاب کنید",
@@ -733,9 +822,9 @@
     "proxyGroup": "گروه پروکسی",
     "setSystemProxy": "تنظیم پروکسی سیستم",
     "clearSystemProxy": "پاک کردن پروکسی سیستم",
-    "tun": "حالت تونل",
-    "enableTunMode": "فعال‌سازی حالت تونل",
-    "disableTunMode": "غیرفعال‌سازی حالت تونل",
+    "tun": "حالت Tun",
+    "enableTunMode": "فعال‌سازی حالت TUN",
+    "disableTunMode": "غیرفعال‌سازی حالت TUN",
     "kernel": "هسته",
     "proxy": "پروکسی سیستم",
     "startKernel": "شروع هسته",
@@ -744,6 +833,7 @@
     "plugins": "پلاگین‌ها"
   },
   "commands": {
+    "title": "دستورها",
     "noMatching": "بدون دستور منطبق"
   }
 }
