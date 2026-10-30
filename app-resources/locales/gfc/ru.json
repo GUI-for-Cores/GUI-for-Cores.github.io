@@ -39,6 +39,10 @@
     "run": "Запустить",
     "refresh": "Обновить",
     "confirm": "ОК",
+    "select": "Выбрать",
+    "selectedCount": "Выбрано: {0}",
+    "selectAtLeast": "Выберите не менее {0}",
+    "maxSelectionExceeded": "Превышен лимит выбора",
     "selectAll": "Выбрать все",
     "http": "Удаленный",
     "file": "Локальный",
@@ -49,7 +53,10 @@
     "canceled": "Отменено",
     "downloading": "Загрузка...",
     "empty": "Данные отсутствуют",
-    "pressAgainToClose": "Нажмите еще раз, чтобы закрыть"
+    "pressAgainToClose": "Нажмите еще раз, чтобы закрыть",
+    "modalList": "Список окон",
+    "openAll": "Открыть все",
+    "minimizeAll": "Свернуть все"
   },
   "kernel": {
     "port": "Порт HTTP(s) прокси",
@@ -105,18 +112,19 @@
       "system": "System",
       "gvisor": "gVisor",
       "mixed": "Mixed",
-      "lwip": "LWIP"
+      "lwip": "LWIP",
+      "mips": "Mips"
     },
     "dns": {
       "enable": "Включить DNS",
       "listen": "Адрес прослушивания",
+      "ipv6": "IPv6",
       "use-hosts": "Использовать hosts",
       "use-system-hosts": "Использовать системные hosts",
       "proxy-server-nameserver": "DNS для прокси-серверов",
       "direct-nameserver": "DNS для прямого выхода",
       "nameserver-policy": "Политика DNS",
       "fallback": "Резервный DNS",
-      "ipv6": "IPv6",
       "fallback-filter": {
         "name": "Фильтр резервного DNS",
         "geoip": "Код страны GeoIP",
@@ -145,7 +153,6 @@
       "certificate": "Сертификат (PEM/путь)",
       "private-key": "Приватный ключ (PEM/путь)"
     },
-    "global-client-fingerprint": "Глобальный отпечаток клиента",
     "geodata-mode": "Режим GEO данных",
     "geodata-loader": "Режим загрузки GEO",
     "geosite-matcher": {
@@ -208,6 +215,7 @@
     "rules": {
       "insertionPoint": "Новое правило будет вставлено здесь",
       "addInsertionPoint": "Добавить точку вставки",
+      "missingInsertionPoint": "Сначала добавьте точку вставки",
       "payload": "Данные",
       "proxy": "Прокси",
       "no-resolve": "Без DNS-резолвинга",
@@ -242,17 +250,22 @@
         "SRC-IP-CIDR": "Исходный сегмент IP (SRC-IP-CIDR)"
       }
     },
+    "sniffer": {
+      "enable": "Включить",
+      "force-dns-mapping": "Сниффинг трафика redir-host",
+      "parse-pure-ip": "Сниффинг трафика без домена",
+      "override-destination": "Заменять адрес назначения",
+      "force-domain": "Домены для принудительного сниффинга",
+      "skip-domain": "Пропускать домены",
+      "skip-src-address": "Пропускать исходные IP",
+      "skip-dst-address": "Пропускать целевые IP",
+      "sniff": {
+        "name": "Протоколы для сниффинга",
+        "ports": "Диапазон портов"
+      }
+    },
     "standard": "Стандарт",
     "memconservative": "Для маломощных устройств",
-    "chrome": "Chrome",
-    "firefox": "Firefox",
-    "safari": "Safari",
-    "iOS": "iOS",
-    "android": "Android",
-    "edge": "Edge",
-    "360": "360",
-    "qq": "QQ",
-    "random": "Случайно",
     "always": "Включено",
     "strict": "Авто",
     "off": "Выключено",
@@ -313,6 +326,7 @@
       "cardMode": "Режим карточек",
       "sortBy": "Сортировать по задержке",
       "delay": "URL для проверки",
+      "timeout": "Тайм-аут проверки задержки (мс)",
       "concurrencyLimit": "Лимит потоков проверки",
       "cardColumns": "Колонки карточек",
       "sensitivity": "Чувствительность прокрутки",
@@ -362,6 +376,7 @@
     "proxyPrefix": "Префикс прокси",
     "updating": "Обновление",
     "useragent": "Пользовательский User-Agent",
+    "resetUserAgent": "Сбросить User-Agent",
     "useInternal": "Использовать правила из подписки",
     "inSecure": "Пропускать проверку TLS",
     "requestMethod": "Метод запроса",
@@ -372,6 +387,7 @@
     }
   },
   "subscribes": {
+    "select": "Выбрать подписки",
     "download": "Прием",
     "upload": "Отдача",
     "total": "Всего",
@@ -381,6 +397,9 @@
     "empty": "Список подписок пуст. Пожалуйста, {action} подписку.",
     "enterLink": "Введите ссылку",
     "proxyCount": "Узлов",
+    "updateDirect": "Обновить напрямую",
+    "updateSystemProxy": "Обновить через системный прокси",
+    "updateKernelProxy": "Обновить через прокси ядра",
     "editProxies": "Редактировать узлы",
     "editSourceFile": "Редактировать (исходник)",
     "copySub": "Копировать ссылку",
@@ -400,6 +419,7 @@
       "general": "Общие",
       "tun": "Настройки TUN",
       "dns": "Настройки DNS",
+      "sniffer": "Настройки Sniffer",
       "groups": "Стратегии",
       "rules": "Правила",
       "mixin-script": "Миксины и скрипты"
@@ -422,6 +442,7 @@
     }
   },
   "profiles": {
+    "select": "Выбрать профили",
     "shouldStop": "Профиль используется, нельзя удалить",
     "empty": "Список профилей пуст. Пожалуйста, {action} профиль.",
     "copytoClipboard": "Конфиг в буфер обмена",
@@ -451,6 +472,7 @@
     "updating": "Обновление"
   },
   "rulesets": {
+    "select": "Выбрать наборы правил",
     "hub": "Центр правил",
     "total": "Всего наборов",
     "noDesc": "Нет описания",
@@ -460,16 +482,21 @@
     "empty": "Наборы пусты. {action} или {import}.",
     "rulesetCount": "Количество правил",
     "editRuleset": "Правка правил",
+    "addToProfile": "Добавить в профиль",
     "selectRuleType": "Выбор типа"
   },
   "plugin": {
     "trigger": "Триггер",
+    "on::enabled": "on::enabled",
+    "on::disabled": "on::disabled",
+    "on::dispose": "on::dispose",
     "on::manual": "on::manual",
     "on::startup": "on::startup",
     "on::shutdown": "on::shutdown",
     "on::generate": "on::generate",
     "on::subscribe": "on::subscribe",
     "on::ready": "on::ready",
+    "on::reload": "on::reload",
     "on::task": "on::task",
     "on::install": "on::install",
     "on::uninstall": "on::uninstall",
@@ -483,8 +510,6 @@
     "version": "Версия",
     "description": "Описание",
     "url": "Ссылка",
-    "install": "Нужна установка",
-    "installed": "Установлено",
     "path": "Путь",
     "type": "Тип",
     "menus": "Меню",
@@ -502,6 +527,7 @@
     "restore": "Сброс к умолчанию"
   },
   "plugins": {
+    "select": "Выбрать плагины",
     "updating": "Обновление",
     "empty": "Плагинов нет. {action} или {import}.",
     "source": "Исходный код",
@@ -515,7 +541,11 @@
     "removeConfiguration": "Удалить настройки плагина?",
     "testRun": "Тестовый запуск",
     "deprecated": "Устарело",
-    "newVersion": "Новая версия"
+    "newVersion": "Новая версия",
+    "slogan": "Настройте {0} под себя",
+    "sourceConfig": {
+      "name": "Источник плагинов"
+    }
   },
   "scheduledtask": {
     "name": "Имя",
@@ -538,6 +568,7 @@
     "run::script": "run::script"
   },
   "scheduledtasks": {
+    "select": "Выбрать задачи",
     "logs": "Логи",
     "name": "Плагин",
     "duration": "Длительность",
@@ -573,6 +604,7 @@
       "secondary": "Вторичный цвет"
     },
     "fontFamily": "Шрифт",
+    "systemTitleBar": "Системные заголовок и рамка окна",
     "resetFont": "Сбросить шрифт",
     "appFolder": {
       "name": "Папка программы",
@@ -601,11 +633,28 @@
     },
     "needRestart": "Нужен перезапуск",
     "needAdmin": "Нужны права админа",
+    "network": "Сетевые запросы",
     "exitOnClose": "Выходить при закрытии окна",
     "closeKernelOnExit": "Закрывать ядро при выходе",
     "autoSetSystemProxy": "Авто прокси",
+    "requestProxy": {
+      "name": "Прокси для запросов",
+      "global": "Как в приложении",
+      "none": "Без прокси",
+      "system": "Системный прокси",
+      "kernel": "Прокси ядра",
+      "custom": "Свой прокси",
+      "test": "Проверить",
+      "testSuccess": "Прокси работает",
+      "empty": "Прокси не настроен"
+    },
     "proxyBypassList": "Список исключений",
     "proxyBypassListTips": "Через точку с запятой",
+    "systemProxyServices": "Имена сетевых служб",
+    "autoSetSystemDNS": "Авто-настройка системного DNS",
+    "autoSetSystemDNSTips": "Для перехвата DNS в режиме TUN",
+    "systemProxyDNS": "DNS при работающем ядре",
+    "systemDefaultDNS": "DNS при остановленном ядре",
     "autoStartKernel": "Запускать ядро со стартом",
     "realMemoryUsage": "Реальное потребление памяти",
     "autoRestartKernel": {
@@ -616,10 +665,14 @@
     "addPluginToMenu": "Плагины в трей",
     "addGroupToMenu": "Группы в трей",
     "multipleInstance": "Разрешить несколько копий",
+    "contentProtection": "Защита содержимого",
+    "contentProtectionTips": "Блокирует захват экрана (нужен перезапуск)",
     "rollingRelease": "Включить Rolling Release",
+    "debugModalSideBySide": "Открывать окна рядом",
     "debugOutline": "Контуры интерфейса",
     "debugNoAnimation": "Без анимаций",
     "debugNoRounded": "Отключить скругленные углы",
+    "debugUsePointer": "Курсор-указатель",
     "debugBorder": "Показать рамку окна",
     "startup": {
       "name": "Автозагрузка",
@@ -634,6 +687,7 @@
       "grant": "Дать права",
       "openTip": "Открыть расположение файла",
       "linkTip": "Посмотреть на GitHub Releases",
+      "update": "Обновить",
       "risk": "Неофициальная сборка, есть риск.",
       "stillDownload": "Все равно скачать",
       "rollbackTip": "Откат версии",
@@ -657,6 +711,12 @@
     "githubapi": {
       "name": "Токен GitHub REST API",
       "tips": "Обеспечивает более высокий лимит скорости"
+    },
+    "githubDownloadAcceleration": {
+      "name": "Ускорение загрузки с GitHub",
+      "tips": "Ускоряет загрузку ресурсов GitHub",
+      "mirror": "Зеркало GitHub",
+      "reset": "Сбросить зеркало"
     }
   },
   "about": {
@@ -664,19 +724,27 @@
     "restart": "Перезапустить приложение",
     "noDownloadLink": "Ссылка для скачивания не найдена",
     "updateSuccessfulRestart": "Обновление завершено, пожалуйста, перезапустите приложение",
-    "updateSuccessfulReplace": "Загрузка завершена, пожалуйста, замените приложение вручную",
     "updateSuccessful": "Обновление завершено",
     "newVersion": "Найдена новая версия",
     "latestVersion": "Уже установлена последняя версия"
   },
   "titlebar": {
+    "pin": "Закрепить",
+    "unpin": "Открепить",
+    "minimize": "Свернуть",
+    "maximize": "Развернуть",
+    "restore": "Восстановить",
+    "close": "Закрыть",
     "resetSize": "Сбросить размер окна",
     "reload": "Перезагрузить окно",
     "restart": "Перезапустить приложение",
     "exitApp": "Выйти из приложения",
-    "waiting": "Ожидание завершения работы программы...",
-    "timeout": "Превышено время ожидания завершения программы. Хотите принудительно завершить?",
-    "exitError": "При завершении произошла ошибка. Хотите принудительно завершить?\n\nПричина: {reason}"
+    "exitPending": "Ожидание завершения работы программы...",
+    "exitTimeout": "Превышено время ожидания завершения программы. Хотите принудительно завершить?",
+    "exitError": "При завершении произошла ошибка. Хотите принудительно завершить?\n\nПричина: {reason}",
+    "reloadPending": "Ожидание перезагрузки программы...",
+    "reloadTimeout": "Превышено время ожидания перезагрузки. Хотите принудительно перезагрузить?",
+    "reloadError": "При перезагрузке произошла ошибка. Хотите принудительно перезагрузить?\n\nПричина: {reason}"
   },
   "tray": {
     "showMainWindow": "Показать главное окно",
@@ -698,6 +766,7 @@
     "plugins": "Плагины"
   },
   "commands": {
+    "title": "Команды",
     "noMatching": "Нет совпадающих команд"
   }
 }
