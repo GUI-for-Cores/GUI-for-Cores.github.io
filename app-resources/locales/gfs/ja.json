@@ -114,6 +114,12 @@
         "route_exclude_address": "除外するルート",
         "endpoint_independent_nat": "エンドポイント非依存 NAT",
         "stack": "TUN スタック",
+        "dns_mode": "DNS モード",
+        "dns_mode_tips": "コアが TUN インターフェースに DNS を設定し、ポート 53 の通信をハイジャックするかどうか",
+        "dns_mode_default": "デフォルト（コアに従う）",
+        "dns_mode_disabled": "無効",
+        "dns_mode_native": "ネイティブ",
+        "dns_mode_hijack": "ハイジャック",
         "system": "System",
         "gvisor": "gVisor",
         "mixed": "Mixed"

@@ -114,6 +114,12 @@
         "route_exclude_address": "Routes exclues",
         "endpoint_independent_nat": "NAT indépendant du point de terminaison",
         "stack": "Pile",
+        "dns_mode": "Mode DNS",
+        "dns_mode_tips": "Si le cœur configure le DNS sur l'interface TUN et détourne le trafic du port 53",
+        "dns_mode_default": "Par défaut (selon le cœur)",
+        "dns_mode_disabled": "Désactivé",
+        "dns_mode_native": "Natif",
+        "dns_mode_hijack": "Détournement",
         "system": "System",
         "gvisor": "gVisor",
         "mixed": "Mixed"

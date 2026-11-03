@@ -114,6 +114,12 @@
         "route_exclude_address": "제외할 라우트",
         "endpoint_independent_nat": "엔드포인트 독립 NAT",
         "stack": "TUN 스택",
+        "dns_mode": "DNS 모드",
+        "dns_mode_tips": "코어가 TUN 인터페이스에 DNS를 설정하고 포트 53 트래픽을 하이재킹할지 여부",
+        "dns_mode_default": "기본값 (코어 따름)",
+        "dns_mode_disabled": "비활성화",
+        "dns_mode_native": "네이티브",
+        "dns_mode_hijack": "하이재킹",
         "system": "System",
         "gvisor": "gVisor",
         "mixed": "Mixed"

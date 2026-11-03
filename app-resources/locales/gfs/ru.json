@@ -114,6 +114,12 @@
         "route_exclude_address": "Адрес исключения маршрута",
         "endpoint_independent_nat": "Независимый от конечной точки NAT",
         "stack": "Реализация TUN",
+        "dns_mode": "Режим DNS",
+        "dns_mode_tips": "Задаёт ли ядро DNS на интерфейсе TUN и перехватывает ли трафик на порт 53",
+        "dns_mode_default": "По умолчанию (как в ядре)",
+        "dns_mode_disabled": "Отключено",
+        "dns_mode_native": "Нативный",
+        "dns_mode_hijack": "Перехват",
         "system": "System",
         "gvisor": "gVisor",
         "mixed": "Mixed"

@@ -114,6 +114,12 @@
         "route_exclude_address": "Ausgeschlossene Routen",
         "endpoint_independent_nat": "Endpunktunabhängiges NAT",
         "stack": "Stack",
+        "dns_mode": "DNS-Modus",
+        "dns_mode_tips": "Legt fest, ob der Kern DNS auf der TUN-Schnittstelle setzt und Traffic auf Port 53 abfängt",
+        "dns_mode_default": "Standard (dem Kern folgen)",
+        "dns_mode_disabled": "Deaktiviert",
+        "dns_mode_native": "Nativ",
+        "dns_mode_hijack": "Hijacking",
         "system": "System",
         "gvisor": "gVisor",
         "mixed": "Mixed"

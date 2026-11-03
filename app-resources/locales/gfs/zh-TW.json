@@ -114,6 +114,12 @@
         "route_exclude_address": "排除自訂路由",
         "endpoint_independent_nat": "獨立於端點的 NAT",
         "stack": "TUN模式堆疊",
+        "dns_mode": "DNS 模式",
+        "dns_mode_tips": "控制核心是否為 TUN 網卡設定 DNS 並劫持 53 埠流量",
+        "dns_mode_default": "預設（跟隨核心）",
+        "dns_mode_disabled": "停用",
+        "dns_mode_native": "原生",
+        "dns_mode_hijack": "劫持",
         "system": "System",
         "gvisor": "gVisor",
         "mixed": "Mixed"

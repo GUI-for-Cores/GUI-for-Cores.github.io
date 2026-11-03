@@ -114,6 +114,12 @@
         "route_exclude_address": "آدرس مستثنی از مسیر",
         "endpoint_independent_nat": "NAT مستقل از نقطه انتهایی",
         "stack": "پشته",
+        "dns_mode": "حالت DNS",
+        "dns_mode_tips": "اینکه هسته DNS را روی کارت شبکه TUN تنظیم کند و ترافیک پورت 53 را برباید یا نه",
+        "dns_mode_default": "پیش‌فرض (پیروی از هسته)",
+        "dns_mode_disabled": "غیرفعال",
+        "dns_mode_native": "بومی",
+        "dns_mode_hijack": "ربودن",
         "system": "System",
         "gvisor": "gVisor",
         "mixed": "Mixed"

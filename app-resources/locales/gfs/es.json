@@ -114,6 +114,12 @@
         "route_exclude_address": "Rutas excluidas",
         "endpoint_independent_nat": "NAT independiente del endpoint",
         "stack": "Pila",
+        "dns_mode": "Modo DNS",
+        "dns_mode_tips": "Si el núcleo configura el DNS en la interfaz TUN y secuestra el tráfico del puerto 53",
+        "dns_mode_default": "Predeterminado (según el núcleo)",
+        "dns_mode_disabled": "Desactivado",
+        "dns_mode_native": "Nativo",
+        "dns_mode_hijack": "Secuestro",
         "system": "System",
         "gvisor": "gVisor",
         "mixed": "Mixed"

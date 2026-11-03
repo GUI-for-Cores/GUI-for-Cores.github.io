@@ -114,6 +114,12 @@
         "route_exclude_address": "Tuyến loại trừ",
         "endpoint_independent_nat": "NAT độc lập điểm cuối",
         "stack": "Ngăn xếp",
+        "dns_mode": "Chế độ DNS",
+        "dns_mode_tips": "Lõi có đặt DNS trên giao diện TUN và chiếm quyền lưu lượng cổng 53 hay không",
+        "dns_mode_default": "Mặc định (theo lõi)",
+        "dns_mode_disabled": "Tắt",
+        "dns_mode_native": "Gốc",
+        "dns_mode_hijack": "Chiếm quyền",
         "system": "System",
         "gvisor": "gVisor",
         "mixed": "Mixed"
