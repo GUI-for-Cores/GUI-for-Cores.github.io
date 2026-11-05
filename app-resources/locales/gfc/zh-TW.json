@@ -543,6 +543,7 @@
     "update": "更新列表",
     "checkForUpdates": "檢查更新",
     "updateSuccess": "外掛中心更新成功",
+    "hashMismatch": "外掛內容校驗失敗，請先更新外掛中心；若已更新，請稍後再試",
     "total": "外掛數量為",
     "removeConfiguration": "是否刪除外掛設定？",
     "testRun": "執行測試",

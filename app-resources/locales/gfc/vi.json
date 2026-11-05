@@ -543,6 +543,7 @@
     "update": "Cập nhật danh sách",
     "checkForUpdates": "Kiểm tra cập nhật",
     "updateSuccess": "Đã cập nhật Plugin-Hub",
+    "hashMismatch": "Xác minh nội dung plugin thất bại. Vui lòng cập nhật Plugin-Hub trước; nếu đã cập nhật, hãy thử lại sau.",
     "total": "Số plugin",
     "removeConfiguration": "Bạn có muốn xóa cấu hình plugin không?",
     "testRun": "Chạy thử",

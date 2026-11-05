@@ -543,6 +543,7 @@
     "update": "목록 업데이트",
     "checkForUpdates": "업데이트 확인",
     "updateSuccess": "플러그인 허브 업데이트 완료",
+    "hashMismatch": "플러그인 내용 검증에 실패했습니다. 먼저 플러그인 허브를 업데이트하세요. 이미 업데이트했다면 잠시 후 다시 시도하세요.",
     "total": "플러그인 수",
     "removeConfiguration": "플러그인 설정을 삭제하시겠습니까?",
     "testRun": "테스트 실행",

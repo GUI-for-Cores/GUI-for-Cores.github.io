@@ -600,6 +600,7 @@
     "update": "一覧を更新",
     "checkForUpdates": "更新を確認",
     "updateSuccess": "プラグインハブを更新しました",
+    "hashMismatch": "プラグインの内容の検証に失敗しました。先にプラグインハブを更新してください。更新済みの場合は、しばらくしてから再試行してください。",
     "total": "プラグイン数",
     "removeConfiguration": "プラグインの設定を削除しますか？",
     "testRun": "テスト実行",

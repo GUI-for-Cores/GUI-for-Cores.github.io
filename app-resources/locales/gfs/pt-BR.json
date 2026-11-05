@@ -600,6 +600,7 @@
     "update": "Atualizar lista",
     "checkForUpdates": "Verificar atualizações",
     "updateSuccess": "Plugin-Hub atualizado com sucesso",
+    "hashMismatch": "Falha na verificação do conteúdo do plugin. Atualize primeiro o Plugin-Hub; se já estiver atualizado, tente novamente mais tarde.",
     "total": "Número de plugins",
     "removeConfiguration": "Deseja remover a configuração do plugin?",
     "testRun": "Testar",

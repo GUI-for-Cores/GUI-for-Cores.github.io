@@ -543,6 +543,7 @@
     "update": "Liste aktualisieren",
     "checkForUpdates": "Nach Updates suchen",
     "updateSuccess": "Plugin-Hub erfolgreich aktualisiert",
+    "hashMismatch": "Überprüfung des Plugin-Inhalts fehlgeschlagen. Bitte aktualisiere zuerst den Plugin-Hub; falls er bereits aktuell ist, versuche es später erneut.",
     "total": "Anzahl der Plugins",
     "removeConfiguration": "Möchtest du die Plugin-Konfiguration entfernen?",
     "testRun": "Testlauf",
