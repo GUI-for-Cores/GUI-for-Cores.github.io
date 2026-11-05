@@ -13,7 +13,8 @@ We provide the following files for different OS and CPU architectures in the pro
 - Windows-386
 - macOS-amd64
 - macOS-arm64
-- Ubuntu-amd64
+- Linux-amd64
+- Linux-arm64
 
 Check the device's operating system and CPU architecture, download the corresponding file
 
@@ -46,22 +47,23 @@ Note:
 
 > Only tested on Ubuntu 22.04.4, if you are on other distributions, download the same file and try to run it.
 
-Unzipped the file, move the executable to the directory of your choice, take GUI.for.Clash for example: `/opt/GUI.for.Clash`
+Unzipped the file, move the executable to the directory of your choice, take GUI.for.Clash for example: `~/.local/opt/GUI.for.Clash`
 
-Create the desktop shortcut manually: create a file named `GUI.for.Clash.desktop`, copy and paste the following content, move the file to `/usr/share/applications` directory
+Create the desktop shortcut manually: create a file named `GUI.for.Clash.desktop` in `~/.local/share/applications` directory, copy and paste the following content:
 
 ```
 [Desktop Entry]
 Version=1.0
 Name=GUI.for.Clash
-Comment=GUI.for.Clash
+Comment=A GUI client for Clash
 StartupWMClass=GUI.for.Clash
-Exec=/path/to/GUI.for.Clash/GUI.for.Clash
+Exec=/path/to/GUI.for.Clash/GUI.for.Clash %u
 Icon=/path/to/GUI.for.Clash/appicon.png
 Terminal=false
 Type=Application
-Categories=Application;GUI.for.Clash;
+Categories=Network;Utility;
 StartupNotify=true
+MimeType=x-scheme-handler/clash;
 ```
 
 ## 5. Directory Dissection
