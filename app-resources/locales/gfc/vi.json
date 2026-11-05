@@ -549,6 +549,13 @@
     "deprecated": "Ngừng hỗ trợ",
     "newVersion": "Mới",
     "slogan": "Tùy biến {0} theo cách của bạn",
+    "changes": {
+      "title": "Thay đổi Plugin-Hub",
+      "added": "Đã thêm",
+      "removed": "Đã xóa",
+      "updated": "Đã cập nhật",
+      "failed": "Nguồn bị lỗi"
+    },
     "sourceConfig": {
       "name": "Nguồn plugin"
     }

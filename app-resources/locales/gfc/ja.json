@@ -549,6 +549,13 @@
     "deprecated": "非推奨",
     "newVersion": "新バージョン",
     "slogan": "{0} を自分好みに",
+    "changes": {
+      "title": "プラグインハブの変更",
+      "added": "追加",
+      "removed": "削除",
+      "updated": "更新",
+      "failed": "失敗したプラグインソース"
+    },
     "sourceConfig": {
       "name": "プラグインソース"
     }

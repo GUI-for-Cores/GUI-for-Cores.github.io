@@ -606,6 +606,13 @@
     "deprecated": "Obsolète",
     "newVersion": "Nouveau",
     "slogan": "Adaptez {0} à votre façon",
+    "changes": {
+      "title": "Modifications du Plugin-Hub",
+      "failed": "Sources en échec",
+      "added": "Ajoutés",
+      "removed": "Supprimés",
+      "updated": "Mis à jour"
+    },
     "sourceConfig": {
       "name": "Source des plugins"
     }

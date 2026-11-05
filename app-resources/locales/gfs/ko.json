@@ -606,6 +606,13 @@
     "deprecated": "지원 중단",
     "newVersion": "새 버전",
     "slogan": "{0}을(를) 내 방식대로",
+    "changes": {
+      "title": "플러그인 허브 변경 사항",
+      "failed": "실패한 플러그인 소스",
+      "added": "추가됨",
+      "removed": "제거됨",
+      "updated": "업데이트됨"
+    },
     "sourceConfig": {
       "name": "플러그인 소스"
     }

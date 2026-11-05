@@ -549,6 +549,13 @@
     "deprecated": "Obsoleto",
     "newVersion": "Novo",
     "slogan": "Faça o {0} funcionar do seu jeito",
+    "changes": {
+      "title": "Alterações no Plugin-Hub",
+      "added": "Adicionados",
+      "removed": "Removidos",
+      "updated": "Atualizados",
+      "failed": "Fontes com falha"
+    },
     "sourceConfig": {
       "name": "Fonte de plugins"
     }

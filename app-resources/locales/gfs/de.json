@@ -606,6 +606,13 @@
     "deprecated": "Veraltet",
     "newVersion": "Neu",
     "slogan": "Gestalte {0} nach deinen Wünschen",
+    "changes": {
+      "title": "Plugin-Hub-Änderungen",
+      "failed": "Fehlgeschlagene Quellen",
+      "added": "Hinzugefügt",
+      "removed": "Entfernt",
+      "updated": "Aktualisiert"
+    },
     "sourceConfig": {
       "name": "Plugin-Quelle"
     }
