@@ -546,7 +546,13 @@
     "rulesetCount": "규칙 수",
     "editRuleset": "규칙 편집",
     "addToProfile": "프로필에 추가",
-    "selectRuleType": "규칙 유형 선택"
+    "selectRuleType": "규칙 유형 선택",
+    "changes": {
+      "title": "규칙 세트 허브 변경 사항",
+      "added": "추가됨",
+      "removed": "제거됨",
+      "updated": "업데이트됨"
+    }
   },
   "plugin": {
     "trigger": "트리거",
@@ -628,6 +634,7 @@
     "cron": "Cron 표현식",
     "notification": "작업 완료 알림",
     "cronTips": "초 분 시 일 월 요일",
+    "validate": "검증",
     "lastTime": "마지막 실행",
     "update::subscription": "구독 업데이트",
     "update::ruleset": "규칙 세트 업데이트",

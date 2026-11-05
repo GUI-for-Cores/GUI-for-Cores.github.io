@@ -489,7 +489,13 @@
     "rulesetCount": "規則數量",
     "editRuleset": "編輯規則",
     "addToProfile": "新增到設定檔",
-    "selectRuleType": "選擇規則類型"
+    "selectRuleType": "選擇規則類型",
+    "changes": {
+      "title": "規則集中心變更",
+      "added": "新增",
+      "removed": "移除",
+      "updated": "更新"
+    }
   },
   "plugin": {
     "trigger": "觸發器",
@@ -571,6 +577,7 @@
     "cron": "表達式",
     "notification": "任務完成通知",
     "cronTips": "秒 分 時 日 月 星期",
+    "validate": "校驗",
     "lastTime": "上次執行時間",
     "update::subscription": "更新訂閱",
     "update::ruleset": "更新規則集",

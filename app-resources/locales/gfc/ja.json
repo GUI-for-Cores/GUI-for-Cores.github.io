@@ -489,7 +489,13 @@
     "rulesetCount": "ルール数",
     "editRuleset": "ルールを編集",
     "addToProfile": "プロファイルに追加",
-    "selectRuleType": "ルールタイプを選択"
+    "selectRuleType": "ルールタイプを選択",
+    "changes": {
+      "title": "ルールセットハブの変更",
+      "added": "追加",
+      "removed": "削除",
+      "updated": "更新"
+    }
   },
   "plugin": {
     "trigger": "トリガー",
@@ -571,6 +577,7 @@
     "cron": "Cron 式",
     "notification": "タスク完了通知",
     "cronTips": "秒 分 時 日 月 曜日",
+    "validate": "検証",
     "lastTime": "前回の実行",
     "update::subscription": "購読を更新",
     "update::ruleset": "ルールセットを更新",

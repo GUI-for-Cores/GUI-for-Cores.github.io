@@ -489,7 +489,13 @@
     "rulesetCount": "Количество правил",
     "editRuleset": "Правка правил",
     "addToProfile": "Добавить в профиль",
-    "selectRuleType": "Выбор типа"
+    "selectRuleType": "Выбор типа",
+    "changes": {
+      "title": "Изменения в центре наборов правил",
+      "added": "Добавлены",
+      "removed": "Удалены",
+      "updated": "Обновлены"
+    }
   },
   "plugin": {
     "trigger": "Триггер",
@@ -571,6 +577,7 @@
     "cron": "Cron выражение",
     "notification": "Уведомление",
     "cronTips": "сек мин час день мес день_нед",
+    "validate": "Проверить",
     "lastTime": "Прошлый запуск",
     "update::subscription": "update::subscription",
     "update::ruleset": "update::ruleset",

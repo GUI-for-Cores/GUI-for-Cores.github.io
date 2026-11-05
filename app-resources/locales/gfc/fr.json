@@ -489,7 +489,13 @@
     "rulesetCount": "Nombre de règles",
     "editRuleset": "Modifier les règles",
     "addToProfile": "Ajouter au profil",
-    "selectRuleType": "Choisir le type de règle"
+    "selectRuleType": "Choisir le type de règle",
+    "changes": {
+      "title": "Modifications du Ruleset-Hub",
+      "added": "Ajoutés",
+      "removed": "Supprimés",
+      "updated": "Mis à jour"
+    }
   },
   "plugin": {
     "trigger": "Déclencheur",
@@ -571,6 +577,7 @@
     "cron": "Expression Cron",
     "notification": "Notification de fin de tâche",
     "cronTips": "Secondes Minutes Heures \"Jour du mois\" Mois \"Jour de la semaine\"",
+    "validate": "Valider",
     "lastTime": "Dernière exécution",
     "update::subscription": "Mettre à jour l'abonnement",
     "update::ruleset": "Mettre à jour le jeu de règles",

@@ -546,7 +546,13 @@
     "rulesetCount": "Anzahl der Regeln",
     "editRuleset": "Regeln bearbeiten",
     "addToProfile": "Zum Profil hinzufügen",
-    "selectRuleType": "Regeltyp auswählen"
+    "selectRuleType": "Regeltyp auswählen",
+    "changes": {
+      "title": "Ruleset-Hub-Änderungen",
+      "added": "Hinzugefügt",
+      "removed": "Entfernt",
+      "updated": "Aktualisiert"
+    }
   },
   "plugin": {
     "trigger": "Auslöser",
@@ -628,6 +634,7 @@
     "cron": "Cron-Ausdruck",
     "notification": "Benachrichtigung bei Abschluss",
     "cronTips": "Sekunden Minuten Stunden \"Tag des Monats\" Monat \"Wochentag\"",
+    "validate": "Prüfen",
     "lastTime": "Letzte Ausführung",
     "update::subscription": "Abonnement aktualisieren",
     "update::ruleset": "Regelsatz aktualisieren",

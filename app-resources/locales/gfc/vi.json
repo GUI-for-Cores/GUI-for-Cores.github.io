@@ -489,7 +489,13 @@
     "rulesetCount": "Số quy tắc",
     "editRuleset": "Sửa quy tắc",
     "addToProfile": "Thêm vào hồ sơ",
-    "selectRuleType": "Chọn loại quy tắc"
+    "selectRuleType": "Chọn loại quy tắc",
+    "changes": {
+      "title": "Thay đổi Ruleset-Hub",
+      "added": "Đã thêm",
+      "removed": "Đã xóa",
+      "updated": "Đã cập nhật"
+    }
   },
   "plugin": {
     "trigger": "Trình kích hoạt",
@@ -571,6 +577,7 @@
     "cron": "Biểu thức Cron",
     "notification": "Thông báo khi hoàn thành",
     "cronTips": "Giây Phút Giờ \"Ngày trong tháng\" Tháng \"Ngày trong tuần\"",
+    "validate": "Xác thực",
     "lastTime": "Lần chạy trước",
     "update::subscription": "Cập nhật gói đăng ký",
     "update::ruleset": "Cập nhật bộ quy tắc",

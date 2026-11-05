@@ -546,7 +546,13 @@
     "rulesetCount": "تعداد قوانین",
     "editRuleset": "ویرایش قوانین",
     "addToProfile": "افزودن به پروفایل",
-    "selectRuleType": "انتخاب نوع قانون"
+    "selectRuleType": "انتخاب نوع قانون",
+    "changes": {
+      "title": "تغییرات مرکز مجموعه‌قواعد",
+      "added": "افزوده‌شده",
+      "removed": "حذف‌شده",
+      "updated": "به‌روزرسانی‌شده"
+    }
   },
   "plugin": {
     "trigger": "محرک",
@@ -628,6 +634,7 @@
     "cron": "کرون",
     "notification": "اعلان اتمام وظیفه",
     "cronTips": "ثانیه دقیقه ساعت روز ماه روز هفته",
+    "validate": "اعتبارسنجی",
     "lastTime": "آخرین زمان",
     "update::subscription": "update::subscription",
     "update::ruleset": "update::ruleset",

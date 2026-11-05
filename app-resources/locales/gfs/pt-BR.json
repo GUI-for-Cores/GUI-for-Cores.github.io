@@ -546,7 +546,13 @@
     "rulesetCount": "Número de regras",
     "editRuleset": "Editar regras",
     "addToProfile": "Adicionar ao perfil",
-    "selectRuleType": "Selecionar tipo de regra"
+    "selectRuleType": "Selecionar tipo de regra",
+    "changes": {
+      "title": "Alterações no Ruleset-Hub",
+      "added": "Adicionados",
+      "removed": "Removidos",
+      "updated": "Atualizados"
+    }
   },
   "plugin": {
     "trigger": "Gatilho",
@@ -628,6 +634,7 @@
     "cron": "Expressão Cron",
     "notification": "Notificar ao concluir a tarefa",
     "cronTips": "Segundos Minutos Horas \"Dia do mês\" Mês \"Dia da semana\"",
+    "validate": "Validar",
     "lastTime": "Última execução",
     "update::subscription": "Atualizar assinatura",
     "update::ruleset": "Atualizar conjunto de regras",
