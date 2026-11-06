@@ -13,7 +13,8 @@
 - Windows-386
 - macOS-amd64
 - macOS-arm64
-- Ubuntu-amd64
+- Linux-amd64
+- Linux-arm64
 
 确认自己设备的平台，然后下载对应的压缩包文件。
 
@@ -46,22 +47,23 @@
 
 > 只测试了 Ubuntu 22.04.4，如果你是其他发行版，也可以下载该目标文件，尝试运行。
 
-解压文件，移动至合适的目录，以 GUI.for.Clash 为例：`/opt/GUI.for.Clash`
+解压文件，移动至合适的目录，以 GUI.for.Clash 为例：`~/.local/opt/GUI.for.Clash`
 
-手动创建桌面图标：新建`GUI.for.Clash.desktop`文件，填入下面内容，然后移动至`/usr/share/applications`目录。
+手动创建桌面图标：在 `~/.local/share/applications` 目录新建 `GUI.for.Clash.desktop` 文件，填入下面内容：
 
 ```
 [Desktop Entry]
 Version=1.0
 Name=GUI.for.Clash
-Comment=GUI.for.Clash
+Comment=适用于 Clash 的图形客户端
 StartupWMClass=GUI.for.Clash
-Exec=/path/to/GUI.for.Clash/GUI.for.Clash
+Exec=/path/to/GUI.for.Clash/GUI.for.Clash %u
 Icon=/path/to/GUI.for.Clash/appicon.png
 Terminal=false
 Type=Application
-Categories=Application;GUI.for.Clash;
+Categories=Network;Utility;
 StartupNotify=true
+MimeType=x-scheme-handler/clash;
 ```
 
 ## 5、目录详解
