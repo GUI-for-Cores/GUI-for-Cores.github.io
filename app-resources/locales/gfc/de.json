@@ -628,8 +628,8 @@
     "systemTitleBar": "Systemtitelleiste und -rahmen verwenden",
     "resetFont": "Schriftart zurücksetzen",
     "appFolder": {
-      "name": "App-Ordner",
-      "open": "Anwendungsordner öffnen"
+      "name": "Datenordner",
+      "open": "Datenordner öffnen"
     },
     "lang": {
       "name": "Sprache",

@@ -685,8 +685,8 @@
     "systemTitleBar": "Usar barra de título e borda do sistema",
     "resetFont": "Redefinir fonte",
     "appFolder": {
-      "name": "Pasta do app",
-      "open": "Abrir pasta do aplicativo"
+      "name": "Pasta de dados",
+      "open": "Abrir pasta de dados"
     },
     "lang": {
       "name": "Idioma",

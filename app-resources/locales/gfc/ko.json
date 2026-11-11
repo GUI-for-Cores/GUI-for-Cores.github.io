@@ -628,8 +628,8 @@
     "systemTitleBar": "시스템 제목 표시줄과 테두리 사용",
     "resetFont": "글꼴 초기화",
     "appFolder": {
-      "name": "앱 폴더",
-      "open": "앱 폴더 열기"
+      "name": "데이터 폴더",
+      "open": "데이터 폴더 열기"
     },
     "lang": {
       "name": "언어",

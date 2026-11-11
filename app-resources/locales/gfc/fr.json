@@ -628,8 +628,8 @@
     "systemTitleBar": "Utiliser la barre de titre et la bordure du système",
     "resetFont": "Réinitialiser la police",
     "appFolder": {
-      "name": "Dossier de l'app",
-      "open": "Ouvrir le dossier de l'application"
+      "name": "Dossier de données",
+      "open": "Ouvrir le dossier de données"
     },
     "lang": {
       "name": "Langue",

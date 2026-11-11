@@ -685,8 +685,8 @@
     "systemTitleBar": "使用系統標題列和邊框",
     "resetFont": "重設字型",
     "appFolder": {
-      "name": "應用程式資料夾",
-      "open": "開啟應用程式資料夾"
+      "name": "資料目錄",
+      "open": "開啟資料目錄"
     },
     "lang": {
       "name": "語言",

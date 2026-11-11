@@ -685,8 +685,8 @@
     "systemTitleBar": "Dùng thanh tiêu đề và viền của hệ thống",
     "resetFont": "Đặt lại phông chữ",
     "appFolder": {
-      "name": "Thư mục app",
-      "open": "Mở thư mục ứng dụng"
+      "name": "Thư mục dữ liệu",
+      "open": "Mở thư mục dữ liệu"
     },
     "lang": {
       "name": "Ngôn ngữ",
