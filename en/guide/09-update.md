@@ -2,13 +2,9 @@
 
 ## Update Normally
 
-1. Windows and GNU/Linux
+Go to the `Settings` - `About`, click on the version number to check for updates. After the download finishes, click `Restart APP` to complete the update
 
-Go to the `Settings` - `About`, click on the version number to check for updates
-
-1. macOS
-
-Go to the `Settings` - `About`, click on the version number to check for updates. then manually replace the main program.
+The main program is replaced automatically on Windows, macOS and GNU/Linux, no manual steps needed
 
 ## Rolling-Release
 
@@ -16,7 +12,7 @@ Go to the `Settings` page, turn on `Enable Rolling Release`, install the `滚动
 
 ## Comparison of the Two Update Methods
 
-Update normally is not user-friendly on macOS, but the experience is better on Windows and GNU/Linux. However, the download size is larger than Rolling Release, and it can be slower if the network connection is poor
+Update normally replaces the main program, but the download size is larger than Rolling Release, and it can be slower if the network connection is poor
 
 Rolling Release is user-friendly on all three platforms and supports automatic updates. It provides faster, newer and more stable GUI experience
 

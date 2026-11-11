@@ -57,7 +57,7 @@ The applications based on this project are neither VPN nor proxy applications. T
 
 ## To Do
 
-- <CheckBox /> Migrate the framework to wails-v3-alpha
+- <CheckBox /> Migrate the framework to wails-v3
 
 - <CheckBox checked /> Develop a visualized traffic usage plugin
 

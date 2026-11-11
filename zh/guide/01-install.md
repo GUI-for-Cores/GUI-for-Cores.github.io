@@ -68,7 +68,31 @@ MimeType=x-scheme-handler/clash;
 
 ## 5、目录详解
 
-以 GUI.for.Clash 为例：
+### 数据目录位置
+
+程序默认将数据保存在当前用户的数据目录，以 GUI.for.Clash 为例（GUI.for.SingBox 将目录名替换为 `GUI.for.SingBox`）：
+
+- Windows：`%LOCALAPPDATA%\GUI.for.Clash`
+- macOS：`~/Library/Application Support/GUI.for.Clash`
+- Linux：`$XDG_DATA_HOME/GUI.for.Clash`，未设置 `XDG_DATA_HOME` 时为 `~/.local/share/GUI.for.Clash`
+
+### 便携版
+
+满足以下任一条件时，数据保存在程序旁的 `data` 目录，即便携版：
+
+- 程序旁已存在 `data` 目录（从旧版本升级的用户会自动沿用，无需迁移）
+- 使用 `--portable` 参数启动
+
+也可以使用 `--data-dir=<路径>` 参数将数据保存到任意目录，相对路径相对于程序所在目录。
+
+注意事项：
+
+- macOS 下 `data` 目录应放在 `.app` 所在的目录，而不是 `.app` 内部
+- 修改启动参数后，如已开启【开机时启动】，请关闭后重新开启一次
+
+### 目录结构
+
+以 GUI.for.Clash 便携版为例，非便携版的数据目录内容与 `data` 目录相同：
 
 ```
 GUI.for.Clash

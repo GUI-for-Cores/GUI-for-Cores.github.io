@@ -57,7 +57,7 @@ GUI.for.Cores 项目旨在快速生成 core 的配置文件，并将其参数以
 
 ## 开发计划
 
-- <CheckBox /> 迁移框架至 wails-v3-alpha 版本
+- <CheckBox /> 迁移框架至 wails-v3 版本
 
 - <CheckBox checked /> 开发一个流量可视化插件
 

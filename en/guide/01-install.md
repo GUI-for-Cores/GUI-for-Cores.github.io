@@ -68,7 +68,31 @@ MimeType=x-scheme-handler/clash;
 
 ## 5. Directory Dissection
 
-Using GUI.for.Clash as an example:
+### Data Directory Location
+
+By default, the application stores its data in the current user's data directory. Using GUI.for.Clash as an example (replace the folder name with `GUI.for.SingBox` for GUI.for.SingBox):
+
+- Windows: `%LOCALAPPDATA%\GUI.for.Clash`
+- macOS: `~/Library/Application Support/GUI.for.Clash`
+- Linux: `$XDG_DATA_HOME/GUI.for.Clash`, or `~/.local/share/GUI.for.Clash` if `XDG_DATA_HOME` is not set
+
+### Portable Mode
+
+The application runs in portable mode and stores its data in the `data` folder next to the application if either of the following is true:
+
+- A `data` folder already exists next to the application (users upgrading from older versions keep using it automatically, no migration needed)
+- The application is started with the `--portable` flag
+
+You can also use the `--data-dir=<path>` flag to store data in any directory. A relative path is resolved against the application's directory.
+
+Notes:
+
+- On macOS, the `data` folder should be placed in the same directory as the `.app`, not inside the `.app`
+- If `Startup on Boot` is enabled, turn it off and on again after changing launch flags
+
+### Directory Structure
+
+Using portable GUI.for.Clash as an example. In non-portable mode, the data directory has the same contents as the `data` folder:
 
 ```
 GUI.for.Clash
