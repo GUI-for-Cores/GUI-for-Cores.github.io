@@ -47,6 +47,18 @@ Note:
 
 > Only tested on Ubuntu 22.04.4, if you are on other distributions, download the same file and try to run it.
 
+### Install via Script (Recommended)
+
+Run the following command in a terminal, then follow the prompts to choose the application (GUI.for.Clash or GUI.for.SingBox) and options:
+
+```bash
+curl -fsSL https://gui-for-cores.github.io/install.sh | bash
+```
+
+The script downloads the latest release and verifies its sha256, installs it to `~/.local/opt/<AppName>`, and optionally creates the desktop shortcut, a command-line symlink (`gui-for-clash` / `gui-for-singbox`), checks runtime dependencies and configures passwordless TUN. A GitHub mirror can be entered for downloading. Later upgrades are handled by the application itself; run the script again to repair or uninstall.
+
+### Manual Installation
+
 Unzipped the file, move the executable to the directory of your choice, take GUI.for.Clash for example: `~/.local/opt/GUI.for.Clash`
 
 Create the desktop shortcut manually: create a file named `GUI.for.Clash.desktop` in `~/.local/share/applications` directory, copy and paste the following content:

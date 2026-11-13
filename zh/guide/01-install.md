@@ -47,6 +47,18 @@
 
 > 只测试了 Ubuntu 22.04.4，如果你是其他发行版，也可以下载该目标文件，尝试运行。
 
+### 脚本安装（推荐）
+
+在终端执行下面命令，按提示选择要安装的程序（GUI.for.Clash 或 GUI.for.SingBox）及各项设置：
+
+```bash
+curl -fsSL https://gui-for-cores.github.io/install.sh | bash
+```
+
+脚本会下载最新版并校验 sha256，安装到 `~/.local/opt/<程序名>`，并按需创建桌面图标、命令行软链接（`gui-for-clash` / `gui-for-singbox`）、检查运行依赖、配置免密 TUN。下载时可填写 GitHub 加速源。之后的升级由程序自行完成，再次执行脚本可修复安装或卸载。
+
+### 手动安装
+
 解压文件，移动至合适的目录，以 GUI.for.Clash 为例：`~/.local/opt/GUI.for.Clash`
 
 手动创建桌面图标：在 `~/.local/share/applications` 目录新建 `GUI.for.Clash.desktop` 文件，填入下面内容：
